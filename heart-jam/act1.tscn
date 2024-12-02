@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2pur65roeh47"]
+[gd_scene load_steps=20 format=3 uid="uid://b2pur65roeh47"]
 
 [ext_resource type="Texture2D" uid="uid://ccjydfx1cxxbu" path="res://debug_sprites/anteroom.png" id="1_48cw7"]
 [ext_resource type="Shader" path="res://shaders/palette_cycle.gdshader" id="2_rjubq"]
@@ -10,8 +10,11 @@
 [ext_resource type="Texture2D" uid="uid://xfbo5a62pjx5" path="res://textures/act1/far_ceiling.png" id="8_rhla6"]
 [ext_resource type="Shader" path="res://shaders/wall.gdshader" id="9_sm6oc"]
 [ext_resource type="Texture2D" uid="uid://bt6irc1weqow6" path="res://debug_sprites/noise_overlay.png" id="10_y1v0y"]
+[ext_resource type="Shader" path="res://halo.gdshader" id="11_bcmmp"]
 [ext_resource type="Texture2D" uid="uid://buw2v2vhdf8g2" path="res://debug_sprites/gradient_smooth_pearl_loop.png" id="11_gu1i7"]
 [ext_resource type="Texture2D" uid="uid://dbho1uyt3vxjd" path="res://sprites/act1_body.png" id="12_s2a0x"]
+[ext_resource type="Texture2D" uid="uid://d1kifbt610ylb" path="res://gradients/gradient_vignette.png" id="12_s05ki"]
+[ext_resource type="Texture2D" uid="uid://c6gi7imytf370" path="res://icon.svg" id="13_ia07f"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_sxxay"]
 resource_local_to_scene = true
@@ -28,6 +31,20 @@ shader_parameter/sway_speed = 0.29
 shader_parameter/sway_strength = -0.095
 shader_parameter/sway_phase_len = 7.41
 shader_parameter/overlay_input = ExtResource("10_y1v0y")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wmye8"]
+shader = ExtResource("11_bcmmp")
+shader_parameter/spread = 0.82
+shader_parameter/cutoff = 6.845
+shader_parameter/size = 1.235
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 4.46
+shader_parameter/ray2_density = 20.72
+shader_parameter/ray2_intensity = 0.005
+shader_parameter/core_intensity = 41.265
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
+shader_parameter/gradient = ExtResource("12_s05ki")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_r42db"]
 shader = ExtResource("2_rjubq")
@@ -106,6 +123,7 @@ scale = Vector2(-1, 1.038)
 texture = ExtResource("8_rhla6")
 
 [node name="Room2" type="Node2D" parent="."]
+visible = false
 texture_filter = 1
 
 [node name="Floor" type="Sprite2D" parent="Room2"]
@@ -169,6 +187,12 @@ material = SubResource("ShaderMaterial_kh74n")
 position = Vector2(401, 0.963597)
 scale = Vector2(-1, 1.038)
 texture = ExtResource("8_rhla6")
+
+[node name="Icon" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_wmye8")
+position = Vector2(744, 194)
+scale = Vector2(4.625, 4.75)
+texture = ExtResource("13_ia07f")
 
 [node name="Act1Body" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_r42db")

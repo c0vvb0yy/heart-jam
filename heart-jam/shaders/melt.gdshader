@@ -16,10 +16,10 @@ void fragment() {
 	float _progress = tan(TIME * density )* progress;
 	// Move pixels near the top faster
 	uv.y -= _progress / UV.y ;//* psuedo_rand(UV.y);
-	uv.x += _progress / UV.x ;//* (psuedo_rand(tan(normalized_sine()))) * psuedo_rand(tan(TIME));
+	//uv.x += _progress / UV.x ;//* (psuedo_rand(tan(normalized_sine()))) * psuedo_rand(tan(TIME));
 	// Created jagged edges for each pixel on the x-axis
-	uv.y -= _progress * meltiness * psuedo_rand(UV.x - mod(UV.x, TEXTURE_PIXEL_SIZE.x));
-	uv.x -= _progress * meltiness * psuedo_rand(UV.y - mod(UV.y, TEXTURE_PIXEL_SIZE.y));
+	uv.y -= _progress * meltiness * psuedo_rand(UV.x - mod(UV.x, TEXTURE_PIXEL_SIZE.x)) ;
+	//uv.x -= _progress * meltiness * psuedo_rand(UV.y - mod(UV.y, TEXTURE_PIXEL_SIZE.y));
 	vec4 input = texture(TEXTURE, uv);
 
 	COLOR.rgb = palette_swap_cycle(texture(TEXTURE, uv), gradient, TIME * speed).rgb ;
