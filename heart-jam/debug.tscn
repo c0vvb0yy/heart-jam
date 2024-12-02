@@ -1,0 +1,133 @@
+[gd_scene load_steps=17 format=3 uid="uid://ct81jhg6e6qvx"]
+
+[ext_resource type="Shader" path="res://shaders/palette_cycle.gdshader" id="1_vjes1"]
+[ext_resource type="Texture2D" uid="uid://co7s6813pofhw" path="res://gradients/gradient_smooth_pearl.png" id="2_q1y13"]
+[ext_resource type="Texture2D" uid="uid://oetbl7jpl75w" path="res://sprites/alternating_chaos.png" id="3_sym03"]
+[ext_resource type="Texture2D" uid="uid://mr808g5nb7r6" path="res://sprites/chaotic_creation.png" id="4_5k4h2"]
+[ext_resource type="Shader" path="res://shaders/wall.gdshader" id="5_lwi52"]
+[ext_resource type="Texture2D" uid="uid://bt6irc1weqow6" path="res://debug_sprites/noise_overlay.png" id="6_k0yd1"]
+[ext_resource type="Texture2D" uid="uid://cjmde2hqdd7j8" path="res://debug_sprites/wall_base.png" id="7_tmqm1"]
+[ext_resource type="Texture2D" uid="uid://4hili1gmswij" path="res://debug_sprites/act2/act2_wall.png" id="8_rbsn8"]
+[ext_resource type="Texture2D" uid="uid://d2vecj2p247y6" path="res://debug_sprites/act2/act2_wall_overlay.png" id="9_idh8b"]
+[ext_resource type="Texture2D" uid="uid://cuvea47brrlxo" path="res://textures/act2/room/bottom.PNG" id="10_6ui4b"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkch2"]
+shader = ExtResource("1_vjes1")
+shader_parameter/speed_scale = 0.07
+shader_parameter/gradient = ExtResource("2_q1y13")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01xnp"]
+shader = ExtResource("5_lwi52")
+shader_parameter/scroll_speed = 0.1
+shader_parameter/debug = null
+shader_parameter/sway_speed = 1.0
+shader_parameter/sway_strength = 0.05
+shader_parameter/sway_phase_len = 8.0
+shader_parameter/overlay_input = ExtResource("6_k0yd1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xydxi"]
+shader = ExtResource("1_vjes1")
+shader_parameter/speed_scale = 0.19
+shader_parameter/gradient = ExtResource("2_q1y13")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xo1hu"]
+shader = ExtResource("5_lwi52")
+shader_parameter/scroll_speed = 0.1
+shader_parameter/debug = 0.0
+shader_parameter/sway_speed = 1.0
+shader_parameter/sway_strength = 0.05
+shader_parameter/sway_phase_len = 8.0
+shader_parameter/overlay_input = ExtResource("6_k0yd1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq806"]
+shader = ExtResource("5_lwi52")
+shader_parameter/scroll_speed = 0.1
+shader_parameter/debug = 1.0
+shader_parameter/sway_speed = 1.0
+shader_parameter/sway_strength = 0.05
+shader_parameter/sway_phase_len = 8.0
+shader_parameter/overlay_input = ExtResource("6_k0yd1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dc7d1"]
+shader = ExtResource("5_lwi52")
+shader_parameter/scroll_speed = 0.1
+shader_parameter/debug = null
+shader_parameter/sway_speed = 1.0
+shader_parameter/sway_strength = 0.05
+shader_parameter/sway_phase_len = 8.0
+shader_parameter/overlay_input = ExtResource("6_k0yd1")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AlternatingChaos" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fkch2")
+position = Vector2(4262, 1385)
+scale = Vector2(0.894444, 1.03438)
+texture = ExtResource("3_sym03")
+
+[node name="ChaoticCreation2" type="Sprite2D" parent="."]
+position = Vector2(650, 1399)
+texture = ExtResource("4_5k4h2")
+
+[node name="AlternatingChaos2" type="Sprite2D" parent="ChaoticCreation2"]
+material = SubResource("ShaderMaterial_01xnp")
+position = Vector2(0.000215054, -0.500054)
+scale = Vector2(1, 0.999375)
+texture = ExtResource("3_sym03")
+
+[node name="ChaoticCreation" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xydxi")
+position = Vector2(3442, 1397)
+scale = Vector2(0.894444, 1.03438)
+texture = ExtResource("4_5k4h2")
+
+[node name="ChaoticCreation" type="Sprite2D" parent="ChaoticCreation"]
+material = SubResource("ShaderMaterial_xo1hu")
+position = Vector2(-2080.62, -1.93347)
+texture = ExtResource("4_5k4h2")
+
+[node name="WallBase2" type="Sprite2D" parent="."]
+position = Vector2(2561, 1385)
+scale = Vector2(1, 1.0325)
+texture = ExtResource("7_tmqm1")
+
+[node name="WallBase" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vq806")
+position = Vector2(2560.5, 1385)
+scale = Vector2(0.998889, 1.0325)
+texture = ExtResource("7_tmqm1")
+
+[node name="Act2Wall3" type="Sprite2D" parent="."]
+position = Vector2(2987, 3177)
+rotation = 1.5708
+texture = ExtResource("8_rbsn8")
+
+[node name="Act2WallOverlay" type="Sprite2D" parent="Act2Wall3"]
+material = SubResource("ShaderMaterial_dc7d1")
+position = Vector2(-10, -5)
+texture = ExtResource("9_idh8b")
+
+[node name="Act2Wall2" type="Sprite2D" parent="."]
+position = Vector2(2221, 3500)
+scale = Vector2(1, -1)
+texture = ExtResource("8_rbsn8")
+
+[node name="Act2WallOverlay" type="Sprite2D" parent="Act2Wall2"]
+material = SubResource("ShaderMaterial_dc7d1")
+position = Vector2(-10, -5)
+texture = ExtResource("9_idh8b")
+
+[node name="Bottom" type="Sprite2D" parent="Act2Wall2"]
+position = Vector2(-1322, 547)
+scale = Vector2(1, -1)
+texture = ExtResource("10_6ui4b")
+
+[node name="Act2Wall" type="Sprite2D" parent="."]
+modulate = Color(0.764002, 0.0984293, 0.218724, 1)
+position = Vector2(2221, 2903)
+texture = ExtResource("8_rbsn8")
+
+[node name="Act2WallOverlay" type="Sprite2D" parent="Act2Wall"]
+material = SubResource("ShaderMaterial_dc7d1")
+position = Vector2(-10, -5)
+texture = ExtResource("9_idh8b")

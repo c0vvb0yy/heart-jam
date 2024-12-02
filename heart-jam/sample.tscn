@@ -1,0 +1,70 @@
+[gd_scene load_steps=15 format=3 uid="uid://ct63pjgmlqbdv"]
+
+[ext_resource type="Texture2D" uid="uid://cjbveug7lvc8w" path="res://debug_sprites/grayscale_4.png" id="1_27lp5"]
+[ext_resource type="Shader" path="res://shaders/palette_cycle.gdshader" id="2_3wu0y"]
+[ext_resource type="Texture2D" uid="uid://kyglpe5k1wii" path="res://new_noise_texture_2d.tres" id="3_8rb8t"]
+[ext_resource type="Texture2D" uid="uid://m58n6gw67m0u" path="res://sprites/perf_body.png" id="4_v8j0y"]
+[ext_resource type="Texture2D" uid="uid://y2i20fwuyqb4" path="res://sprites/perf_head.png" id="5_17pg5"]
+
+[sub_resource type="Gradient" id="Gradient_ljvnt"]
+colors = PackedColorArray(0.961429, 0.518598, 0.781448, 1, 0.250534, 0.727785, 0.92973, 1)
+metadata/_snap_count = 3
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_11sud"]
+gradient = SubResource("Gradient_ljvnt")
+width = 512
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3jrf"]
+shader = ExtResource("2_3wu0y")
+shader_parameter/speed_scale = 1.0
+shader_parameter/gradient = SubResource("GradientTexture1D_11sud")
+shader_parameter/noise = ExtResource("3_8rb8t")
+
+[sub_resource type="Gradient" id="Gradient_01ria"]
+colors = PackedColorArray(0.0779399, 0.715347, 0.775648, 1, 0.982219, 0.796767, 0.860135, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_meybi"]
+gradient = SubResource("Gradient_01ria")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7uq7"]
+shader = ExtResource("2_3wu0y")
+shader_parameter/speed_scale = 0.1
+shader_parameter/gradient = SubResource("GradientTexture1D_meybi")
+shader_parameter/noise = ExtResource("3_8rb8t")
+
+[sub_resource type="Gradient" id="Gradient_jptcg"]
+colors = PackedColorArray(0.981974, 0.522139, 0.688233, 1, 0.682803, 0.999103, 0.952982, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_q2l5l"]
+gradient = SubResource("Gradient_jptcg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e5bcl"]
+shader = ExtResource("2_3wu0y")
+shader_parameter/speed_scale = 0.1
+shader_parameter/gradient = SubResource("GradientTexture1D_q2l5l")
+shader_parameter/noise = ExtResource("3_8rb8t")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Grayscale5" type="Sprite2D" parent="."]
+position = Vector2(477, 72.5469)
+scale = Vector2(1, 0.921875)
+texture = ExtResource("1_27lp5")
+
+[node name="Grayscale4" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_r3jrf")
+position = Vector2(477.5, 196.5)
+scale = Vector2(0.998047, 0.914063)
+texture = ExtResource("3_8rb8t")
+
+[node name="PerfBody" type="Sprite2D" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_g7uq7")
+position = Vector2(599, 470)
+texture = ExtResource("4_v8j0y")
+
+[node name="PerfHead" type="Sprite2D" parent="PerfBody"]
+material = SubResource("ShaderMaterial_e5bcl")
+position = Vector2(-53, -363)
+texture = ExtResource("5_17pg5")

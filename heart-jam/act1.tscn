@@ -1,0 +1,176 @@
+[gd_scene load_steps=16 format=3 uid="uid://b2pur65roeh47"]
+
+[ext_resource type="Texture2D" uid="uid://ccjydfx1cxxbu" path="res://debug_sprites/anteroom.png" id="1_48cw7"]
+[ext_resource type="Shader" path="res://shaders/palette_cycle.gdshader" id="2_rjubq"]
+[ext_resource type="Texture2D" uid="uid://co7s6813pofhw" path="res://gradients/gradient_smooth_pearl.png" id="3_sx1bl"]
+[ext_resource type="Texture2D" uid="uid://cdifprcuw7u7o" path="res://textures/act1/floor.png" id="4_pcpw8"]
+[ext_resource type="Texture2D" uid="uid://dw25m2h2wrpe3" path="res://textures/act1/near_wall.png" id="5_q5roo"]
+[ext_resource type="Texture2D" uid="uid://nyy6lolqo1ji" path="res://textures/act1/near_ceiling.png" id="6_0gq8t"]
+[ext_resource type="Texture2D" uid="uid://b8jq0kr4k0ecl" path="res://textures/act1/far_wall.png" id="7_7mw58"]
+[ext_resource type="Texture2D" uid="uid://xfbo5a62pjx5" path="res://textures/act1/far_ceiling.png" id="8_rhla6"]
+[ext_resource type="Shader" path="res://shaders/wall.gdshader" id="9_sm6oc"]
+[ext_resource type="Texture2D" uid="uid://bt6irc1weqow6" path="res://debug_sprites/noise_overlay.png" id="10_y1v0y"]
+[ext_resource type="Texture2D" uid="uid://buw2v2vhdf8g2" path="res://debug_sprites/gradient_smooth_pearl_loop.png" id="11_gu1i7"]
+[ext_resource type="Texture2D" uid="uid://dbho1uyt3vxjd" path="res://sprites/act1_body.png" id="12_s2a0x"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxxay"]
+resource_local_to_scene = true
+shader = ExtResource("2_rjubq")
+shader_parameter/speed_scale = 0.1
+shader_parameter/gradient = ExtResource("3_sx1bl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kh74n"]
+resource_local_to_scene = true
+shader = ExtResource("9_sm6oc")
+shader_parameter/scroll_speed = 0.1
+shader_parameter/debug = null
+shader_parameter/sway_speed = 0.29
+shader_parameter/sway_strength = -0.095
+shader_parameter/sway_phase_len = 7.41
+shader_parameter/overlay_input = ExtResource("10_y1v0y")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r42db"]
+shader = ExtResource("2_rjubq")
+shader_parameter/speed_scale = -0.2
+shader_parameter/gradient = ExtResource("11_gu1i7")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Anteroom" type="Sprite2D" parent="."]
+position = Vector2(802, 603)
+texture = ExtResource("1_48cw7")
+
+[node name="Room" type="Node2D" parent="."]
+texture_filter = 1
+
+[node name="Floor" type="Sprite2D" parent="Room"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(806, 1081.5)
+scale = Vector2(1.27813, 1.30982)
+texture = ExtResource("4_pcpw8")
+
+[node name="NearWall" type="Sprite2D" parent="Room"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(154, 544.25)
+scale = Vector2(1, 0.998915)
+texture = ExtResource("5_q5roo")
+
+[node name="NearWall" type="Sprite2D" parent="Room/NearWall"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(1300, 6.75733)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_q5roo")
+
+[node name="NearCeiling" type="Sprite2D" parent="Room"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(348, -211)
+scale = Vector2(1, 0.998915)
+texture = ExtResource("6_0gq8t")
+
+[node name="NearCeiling" type="Sprite2D" parent="Room/NearCeiling"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(915, 2.3358)
+scale = Vector2(-1.00346, 1.00062)
+texture = ExtResource("6_0gq8t")
+
+[node name="FarWall" type="Sprite2D" parent="Room"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(603, 623)
+texture = ExtResource("7_7mw58")
+
+[node name="FarWall" type="Sprite2D" parent="Room/FarWall"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(403, -2)
+scale = Vector2(-1, 1)
+texture = ExtResource("7_7mw58")
+
+[node name="FarCeiling" type="Sprite2D" parent="Room"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(606, 136)
+scale = Vector2(1, 1.03778)
+texture = ExtResource("8_rhla6")
+
+[node name="FarCeiling" type="Sprite2D" parent="Room/FarCeiling"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_sxxay")
+position = Vector2(401, 0.963597)
+scale = Vector2(-1, 1.038)
+texture = ExtResource("8_rhla6")
+
+[node name="Room2" type="Node2D" parent="."]
+texture_filter = 1
+
+[node name="Floor" type="Sprite2D" parent="Room2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(806, 1081.5)
+scale = Vector2(1.27813, 1.30982)
+texture = ExtResource("4_pcpw8")
+
+[node name="NearWall" type="Sprite2D" parent="Room2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(154, 544.25)
+scale = Vector2(1, 0.998915)
+texture = ExtResource("5_q5roo")
+
+[node name="NearWall" type="Sprite2D" parent="Room2/NearWall"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(1300, 6.75733)
+scale = Vector2(-1, 1)
+texture = ExtResource("5_q5roo")
+
+[node name="NearCeiling" type="Sprite2D" parent="Room2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(348, -211)
+scale = Vector2(1, 0.998915)
+texture = ExtResource("6_0gq8t")
+
+[node name="NearCeiling" type="Sprite2D" parent="Room2/NearCeiling"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(915, 2.3358)
+scale = Vector2(-1.00346, 1.00062)
+texture = ExtResource("6_0gq8t")
+
+[node name="FarWall" type="Sprite2D" parent="Room2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(603, 623)
+texture = ExtResource("7_7mw58")
+
+[node name="FarWall" type="Sprite2D" parent="Room2/FarWall"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(403, -2)
+scale = Vector2(-1, 1)
+texture = ExtResource("7_7mw58")
+
+[node name="FarCeiling" type="Sprite2D" parent="Room2"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(606, 136)
+scale = Vector2(1, 1.03778)
+texture = ExtResource("8_rhla6")
+
+[node name="FarCeiling" type="Sprite2D" parent="Room2/FarCeiling"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_kh74n")
+position = Vector2(401, 0.963597)
+scale = Vector2(-1, 1.038)
+texture = ExtResource("8_rhla6")
+
+[node name="Act1Body" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_r42db")
+position = Vector2(828, 542)
+texture = ExtResource("12_s2a0x")
