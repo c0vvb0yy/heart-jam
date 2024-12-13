@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2l2lb13tfkln"]
+
+[ext_resource type="Script" path="res://scripts/bbcode/cycle.gd" id="1_m4lgd"]
+
+[sub_resource type="SystemFont" id="SystemFont_thlr2"]
+font_names = PackedStringArray("Monospace")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_eah0q"]
+script = ExtResource("1_m4lgd")
+
+[sub_resource type="SystemFont" id="SystemFont_8jb24"]
+font_names = PackedStringArray("Monospace")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_8ii07"]
+script = ExtResource("1_m4lgd")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 8.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 134.0
+offset_right = 928.0
+offset_bottom = 285.0
+theme_override_fonts/normal_font = SubResource("SystemFont_thlr2")
+theme_override_font_sizes/normal_font_size = 86
+bbcode_enabled = true
+text = "[cycle word=r,e,s,p,o,n,s,i,b,i,l,i,t,y]responsibility"
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_eah0q")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 0
+offset_left = 388.0
+offset_top = 65.0
+offset_right = 428.0
+offset_bottom = 105.0
+theme_override_fonts/normal_font = SubResource("SystemFont_8jb24")
+theme_override_font_sizes/normal_font_size = 86
+bbcode_enabled = true
+text = "[cycle word=t,a,k,e]take"
+fit_content = true
+custom_effects = [SubResource("RichTextEffect_8ii07")]

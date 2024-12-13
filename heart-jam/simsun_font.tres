@@ -1,0 +1,6 @@
+[gd_resource type="SystemFont" format=3 uid="uid://b8hy7o52yr4s1"]
+
+[resource]
+font_names = PackedStringArray("SimSun", "Ebrima", "David CLM")
+subpixel_positioning = 0
+oversampling = 0.2

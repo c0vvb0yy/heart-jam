@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://xfbo5a62pjx5" path="res://textures/act1/far_ceiling.png" id="8_rhla6"]
 [ext_resource type="Shader" path="res://shaders/wall.gdshader" id="9_sm6oc"]
 [ext_resource type="Texture2D" uid="uid://bt6irc1weqow6" path="res://debug_sprites/noise_overlay.png" id="10_y1v0y"]
-[ext_resource type="Shader" path="res://halo.gdshader" id="11_bcmmp"]
+[ext_resource type="Shader" path="res://shaders/halo.gdshader" id="11_bcmmp"]
 [ext_resource type="Texture2D" uid="uid://buw2v2vhdf8g2" path="res://debug_sprites/gradient_smooth_pearl_loop.png" id="11_gu1i7"]
 [ext_resource type="Texture2D" uid="uid://dbho1uyt3vxjd" path="res://sprites/act1_body.png" id="12_s2a0x"]
 [ext_resource type="Texture2D" uid="uid://d1kifbt610ylb" path="res://gradients/gradient_vignette.png" id="12_s05ki"]
@@ -123,7 +123,6 @@ scale = Vector2(-1, 1.038)
 texture = ExtResource("8_rhla6")
 
 [node name="Room2" type="Node2D" parent="."]
-visible = false
 texture_filter = 1
 
 [node name="Floor" type="Sprite2D" parent="Room2"]
@@ -188,9 +187,9 @@ position = Vector2(401, 0.963597)
 scale = Vector2(-1, 1.038)
 texture = ExtResource("8_rhla6")
 
-[node name="Icon" type="Sprite2D" parent="."]
+[node name="Halo" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_wmye8")
-position = Vector2(744, 194)
+position = Vector2(725, 174)
 scale = Vector2(4.625, 4.75)
 texture = ExtResource("13_ia07f")
 

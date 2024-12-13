@@ -1,5 +1,5 @@
 shader_type canvas_item;
-#include "shaders/earthbound.gdshaderinc"
+#include "res://shaders/earthbound.gdshaderinc"
 // Bounding Battle Backgound shader by Youkuri, this shader is under the Creative Commons license so feel free to use it to your heart contents! No need of crediting or anything.
 // NOTE: Filter *does* matter when it comes to palette cycling, Filtered sprites makes it look smoother and Unfiltered makes them change in an instant
 

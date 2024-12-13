@@ -10,10 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://4hili1gmswij" path="res://debug_sprites/act2/act2_wall.png" id="8_rbsn8"]
 [ext_resource type="Texture2D" uid="uid://d2vecj2p247y6" path="res://debug_sprites/act2/act2_wall_overlay.png" id="9_idh8b"]
 [ext_resource type="Texture2D" uid="uid://cuvea47brrlxo" path="res://textures/act2/room/bottom.PNG" id="10_6ui4b"]
-[ext_resource type="Shader" path="res://earthbound.gdshader" id="11_mamee"]
+[ext_resource type="Shader" path="res://shaders/earthbound.gdshader" id="11_mamee"]
 [ext_resource type="Texture2D" uid="uid://bc1catjcunqtt" path="res://debug_sprites/act2_earthbound_bg.png" id="12_4sumr"]
 [ext_resource type="Texture2D" uid="uid://c18vkhwrrk0vr" path="res://debug_sprites/gradient_smooth_pearl_glitched.png" id="13_lr772"]
-[ext_resource type="Shader" path="res://fractal_test.gdshader" id="14_c5m0o"]
+[ext_resource type="Shader" path="res://shaders/fractal_test.gdshader" id="14_c5m0o"]
 [ext_resource type="Texture2D" uid="uid://c6wmmyawgkk60" path="res://debug_sprites/gradient_smooth_bronze.png" id="15_cfwuy"]
 [ext_resource type="Texture2D" uid="uid://blh5yh3xflfo3" path="res://debug_sprites/incandescent_topsurgery.png" id="16_e57jg"]
 

@@ -1,0 +1,77 @@
+[gd_scene load_steps=15 format=3 uid="uid://cqrb645ycgvg1"]
+
+[ext_resource type="Shader" path="res://iridescence_base.gdshader" id="1_8u3fg"]
+[ext_resource type="Script" path="res://scripts/bbcode/glitchText.gd" id="1_kr46o"]
+[ext_resource type="SystemFont" uid="uid://b8hy7o52yr4s1" path="res://simsun_font.tres" id="1_vhe4h"]
+[ext_resource type="Script" path="res://scripts/bbcode/jiggle.gd" id="3_cendt"]
+[ext_resource type="Script" path="res://scripts/bbcode/replacer.gd" id="6_0r0kk"]
+[ext_resource type="Script" path="res://scripts/bbcode/cycle.gd" id="7_a4b0m"]
+[ext_resource type="SystemFont" uid="uid://c4gj6gdigs8ap" path="res://ebrima_font.tres" id="8_xow1v"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tg0q7"]
+noise_type = 3
+frequency = 0.0011
+fractal_type = 2
+fractal_octaves = 3
+fractal_lacunarity = 1.82
+domain_warp_enabled = true
+domain_warp_amplitude = 62.735
+domain_warp_fractal_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uf713"]
+seamless = true
+noise = SubResource("FastNoiseLite_tg0q7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kjkwf"]
+shader = ExtResource("1_8u3fg")
+shader_parameter/noise_scale = 1.647
+shader_parameter/distortion_scale_x = 0.028
+shader_parameter/distortion_scale_y = 0.472
+shader_parameter/rainbow_intensity = 0.148
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_uf713")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_oi17g"]
+script = ExtResource("1_kr46o")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_xwgop"]
+script = ExtResource("3_cendt")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_gp22t"]
+script = ExtResource("6_0r0kk")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ywj3q"]
+script = ExtResource("7_a4b0m")
+
+[node name="RichTextLabel" type="RichTextLabel"]
+material = SubResource("ShaderMaterial_kjkwf")
+offset_right = 815.0
+offset_bottom = 1109.0
+theme_override_fonts/normal_font = ExtResource("1_vhe4h")
+theme_override_font_sizes/normal_font_size = 131
+bbcode_enabled = true
+text = "Æ[jiggle h=10 v=2][glitch magnitude=0.8 glitchiness=2.5 speed=0.5]nthroppe[/glitch] [/jiggle]
+
+Æ[replacer prim_repl=s,w,a,g,g,y sec_repl=g,a,y][glitch magnitude=0.8 glitchiness=1.5 speed=1.5]nthroppe[/glitch][/replacer]
+pr[replacer prim_repl=a]e[/replacer]y"
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_oi17g"), SubResource("RichTextEffect_xwgop"), SubResource("RichTextEffect_gp22t"), SubResource("RichTextEffect_ywj3q")]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 2212.0
+offset_top = 138.0
+offset_right = 2252.0
+offset_bottom = 178.0
+bbcode_enabled = true
+text = "[cycle word=t,a,k,e] take"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="RichTextLabel"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 161.0
+offset_right = 50.0
+offset_bottom = 201.0
+theme_override_fonts/normal_font = ExtResource("8_xow1v")
+theme_override_font_sizes/normal_font_size = 11
+text = "[cycle word=r,e,s,p,o,n,s,i,b,i,l,i,t,y]responsibility[/cycle]"
+fit_content = true

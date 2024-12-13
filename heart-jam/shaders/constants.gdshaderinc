@@ -14,3 +14,7 @@ float psuedo_rand(float x) {
 vec4 palette_swap_cycle(vec4 input, sampler2D gradient, float speed){
 	return texture(gradient, vec2(input.r + speed, 0.0));
 }
+
+bool vec3_greaterThan(vec3 a, vec3 b){
+	return a.r >= b.r && a.g >= b.g && a.b >= b.b;
+}
