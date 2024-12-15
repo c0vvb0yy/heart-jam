@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://crctahejpqbp1"]
+
+[ext_resource type="Shader" path="res://shaders/aurora.gdshader" id="1_kd05q"]
+[ext_resource type="Texture2D" uid="uid://c5fk54410nc4l" path="res://debug_sprites/aurora_mask.png" id="2_71vdl"]
+[ext_resource type="Texture2D" uid="uid://c1qnef7yjmx2e" path="res://debug_sprites/aurora.png" id="2_bsvrh"]
+[ext_resource type="Texture2D" uid="uid://bt6irc1weqow6" path="res://debug_sprites/noise_overlay.png" id="2_h0xuj"]
+[ext_resource type="Texture2D" uid="uid://duyq3t34smpf1" path="res://debug_sprites/gradient_smooth_pearl_sludged.png" id="3_d1bo6"]
+[ext_resource type="Texture2D" uid="uid://brvx7ks664hub" path="res://debug_sprites/mask.png" id="4_dgjh6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwhh5"]
+shader = ExtResource("1_kd05q")
+shader_parameter/aurora_scroll_speed = 0.0
+shader_parameter/color_scroll_speed = 0.5
+shader_parameter/curve_horizontal_repition = 1.0
+shader_parameter/glow_strength = 2.94
+shader_parameter/debug = 0.0
+shader_parameter/base_white_size = 1.5
+shader_parameter/tint = Color(0.929819, 0.648817, 0.568599, 1)
+shader_parameter/lower_transparency_mask = ExtResource("2_71vdl")
+shader_parameter/gradient_base = ExtResource("2_h0xuj")
+shader_parameter/gradient_tint = ExtResource("3_d1bo6")
+shader_parameter/heart_mask = ExtResource("4_dgjh6")
+shader_parameter/sway_strength = 5.745
+shader_parameter/sway_phase_len = 1.2
+shader_parameter/sway_speed = 1.2
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Aurora" type="Sprite2D" parent="."]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_iwhh5")
+position = Vector2(514, 513)
+texture = ExtResource("2_bsvrh")
+region_rect = Rect2(1024, 1024, 2048, 1024)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(968, 579)
+enabled = false
+zoom = Vector2(1.585, 1.188)

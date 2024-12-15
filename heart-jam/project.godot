@@ -15,10 +15,31 @@ run/main_scene="res://act1.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+DIISIS="*res://addons/diisis/shared/autoload/Diisis.tscn"
+Parser="*res://addons/diisis/parser/autoload/parser.tscn"
+ParserEvents="*res://addons/diisis/parser/autoload/parser_events.tscn"
+Pages="*res://addons/diisis/editor/autoload/pages.tscn"
+DiisisEditorUtil="*res://addons/diisis/editor/autoload/diisis_editor_util.tscn"
+DiisisEditorActions="*res://addons/diisis/editor/autoload/diisis_editor_actions.tscn"
+
+[diisis]
+
+project/file/path=""
+
 [display]
 
 window/size/viewport_width=1600
 window/size/viewport_height=1200
+
+[editor]
+
+movie_writer/movie_file="C:/Users/jamis/programming/heart-jam-git/heart-jam/movies/recordings.avi"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/diisis/plugin.cfg")
 
 [rendering]
 

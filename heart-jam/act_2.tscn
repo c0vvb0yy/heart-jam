@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b6b8iwi8nq8p"]
+[gd_scene load_steps=43 format=3 uid="uid://b6b8iwi8nq8p"]
 
 [ext_resource type="Texture2D" uid="uid://c13xrnc4kl283" path="res://textures/act2/room/base_left.PNG" id="1_2cnyh"]
 [ext_resource type="Shader" path="res://shaders/wall.gdshader" id="2_68eof"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://blh5yh3xflfo3" path="res://debug_sprites/incandescent_topsurgery.png" id="26_xnbsv"]
 [ext_resource type="Texture2D" uid="uid://xxvbr06uadiu" path="res://sprites/act2/head.png" id="31_6ssdk"]
 [ext_resource type="Texture2D" uid="uid://csp6ypywgyl06" path="res://gradients/greyscale_loop.png" id="31_d4dvj"]
+[ext_resource type="Script" path="res://talk_animation.gd" id="33_n08j1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4l02p"]
 shader = ExtResource("2_68eof")
@@ -307,5 +308,5 @@ texture = ExtResource("26_xnbsv")
 [node name="Head" type="Sprite2D" parent="Aenthroppe"]
 material = SubResource("ShaderMaterial_4nrir")
 position = Vector2(-96, -275)
-rotation = 0.000962698
 texture = ExtResource("31_6ssdk")
+script = ExtResource("33_n08j1")
