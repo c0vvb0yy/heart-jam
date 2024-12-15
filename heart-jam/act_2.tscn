@@ -168,10 +168,10 @@ shader_parameter/vertical_deform_speed = 1.0
 shader = ExtResource("15_pkyvh")
 shader_parameter/snes_transparency = true
 shader_parameter/gba_transparency = true
-shader_parameter/vertex_deform = true
+shader_parameter/vertex_deform = false
 shader_parameter/mix_base_texture = true
 shader_parameter/mix_degree = 0.3
-shader_parameter/_progress = 0.4
+shader_parameter/_progress = 0.5
 shader_parameter/sprite_scroll_direction = Vector2(0, 0)
 shader_parameter/sprite_scroll_speed = 0.01
 shader_parameter/gba_transparency_scroll_direction = Vector2(0.41, 0.24)
@@ -207,6 +207,7 @@ shader_parameter/speed = 0.405
 shader_parameter/gradient = ExtResource("31_d4dvj")
 
 [node name="act2" type="Node2D"]
+rotation = -3.21119e-05
 
 [node name="room" type="Node2D" parent="."]
 position = Vector2(830, 661)

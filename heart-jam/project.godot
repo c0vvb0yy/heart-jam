@@ -26,7 +26,7 @@ DiisisEditorActions="*res://addons/diisis/editor/autoload/diisis_editor_actions.
 
 [diisis]
 
-project/file/path=""
+project/file/path="res://heart.json"
 
 [display]
 
@@ -40,6 +40,14 @@ movie_writer/movie_file="C:/Users/jamis/programming/heart-jam-git/heart-jam/movi
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/diisis/plugin.cfg")
+
+[input]
+
+advance={
+"deadzone": 0.5,
+"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(201, 30),"global_position":Vector2(207, 92),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
+]
+}
 
 [rendering]
 

@@ -13,4 +13,3 @@ func _process(delta):
 	if(cool_down <= 0):
 		cool_down = 0.25
 		self.transform = original_transform.rotated_local(deg_to_rad(randf_range(-10, 10)))
-		print(self.transform.get_rotation())
