@@ -31,8 +31,8 @@
 [ext_resource type="Texture2D" uid="uid://cht7nwysbi64e" path="res://sprites/act2/shine.png" id="25_ekavt"]
 [ext_resource type="Texture2D" uid="uid://blh5yh3xflfo3" path="res://debug_sprites/incandescent_topsurgery.png" id="26_xnbsv"]
 [ext_resource type="Texture2D" uid="uid://xxvbr06uadiu" path="res://sprites/act2/head.png" id="31_6ssdk"]
-[ext_resource type="Texture2D" uid="uid://csp6ypywgyl06" path="res://gradients/greyscale_loop.png" id="31_d4dvj"]
 [ext_resource type="Script" path="res://talk_animation.gd" id="33_n08j1"]
+[ext_resource type="Material" uid="uid://8qvdn7lkdcyl" path="res://tears.tres" id="33_o4qvo"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4l02p"]
 shader = ExtResource("2_68eof")
@@ -198,13 +198,7 @@ shader_parameter/palette_cycling_speed = 0.1
 shader_parameter/palette = ExtResource("25_dhddy")
 shader_parameter/fractal = ExtResource("24_ifeau")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4nrir"]
-shader = ExtResource("12_blhl4")
-shader_parameter/progress = 0.664
-shader_parameter/density = 0.507
-shader_parameter/meltiness = 1.951
-shader_parameter/speed = 0.405
-shader_parameter/gradient = ExtResource("31_d4dvj")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5af02"]
 
 [node name="act2" type="Node2D"]
 rotation = -3.21119e-05
@@ -307,7 +301,12 @@ position = Vector2(-22, 78)
 texture = ExtResource("26_xnbsv")
 
 [node name="Head" type="Sprite2D" parent="Aenthroppe"]
-material = SubResource("ShaderMaterial_4nrir")
+material = SubResource("ShaderMaterial_5af02")
 position = Vector2(-96, -275)
 texture = ExtResource("31_6ssdk")
 script = ExtResource("33_n08j1")
+
+[node name="Tears" type="Sprite2D" parent="Aenthroppe"]
+material = ExtResource("33_o4qvo")
+position = Vector2(-96, -275)
+texture = ExtResource("31_6ssdk")

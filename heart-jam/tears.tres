@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://8qvdn7lkdcyl"]
+
+[ext_resource type="Shader" path="res://shaders/melt.gdshader" id="1_qas22"]
+[ext_resource type="Texture2D" uid="uid://csp6ypywgyl06" path="res://gradients/greyscale_loop.png" id="2_sub44"]
+
+[resource]
+shader = ExtResource("1_qas22")
+shader_parameter/progress = 0.664
+shader_parameter/density = 0.507
+shader_parameter/meltiness = 1.951
+shader_parameter/speed = 0.405
+shader_parameter/gradient = ExtResource("2_sub44")

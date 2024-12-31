@@ -18,3 +18,14 @@ vec4 palette_swap_cycle(vec4 input, sampler2D gradient, float speed){
 bool vec3_greaterThan(vec3 a, vec3 b){
 	return a.r >= b.r && a.g >= b.g && a.b >= b.b;
 }
+
+vec2 rotate(vec2 uv, vec2 pivot, float angle)
+{
+	mat2 rotation = mat2(vec2(sin(angle), -cos(angle)),
+						vec2(cos(angle), sin(angle)));
+	
+	uv -= pivot;
+	uv = uv * rotation;
+	uv += pivot;
+	return uv;
+}
