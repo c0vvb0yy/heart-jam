@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b2pur65roeh47"]
+[gd_scene load_steps=3 format=3 uid="uid://b2pur65roeh47"]
 
 [ext_resource type="PackedScene" uid="uid://bgx7pdorocdvv" path="res://atc1_vis.tscn" id="1_y8l71"]
 [ext_resource type="SystemFont" uid="uid://b8hy7o52yr4s1" path="res://simsun_font.tres" id="16_4gu8h"]
-[ext_resource type="Script" path="res://addons/diisis/parser/src/line_reader.gd" id="17_gradh"]
-[ext_resource type="Script" path="res://addons/diisis/parser/src/InstructionHandler.gd" id="18_fyspd"]
 
 [node name="UI" type="Control"]
 layout_mode = 3
@@ -62,22 +60,3 @@ offset_bottom = 139.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-
-[node name="LineReader" type="Control" parent="." node_paths=PackedStringArray("choice_container", "choice_option_container", "text_content", "text_container", "name_label", "name_container", "instruction_handler")]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("17_gradh")
-max_text_line_count = 4
-text_content_prefix = "==>"
-choice_container = NodePath("../PanelContainer")
-choice_option_container = NodePath("../PanelContainer/HBoxContainer")
-text_content = NodePath("../TextContainer/MarginContainer/VBoxContainer/PanelContainer/Text")
-text_container = NodePath("../TextContainer/MarginContainer/VBoxContainer/PanelContainer")
-name_label = NodePath("../TextContainer/MarginContainer/VBoxContainer/PanelContainer2/Name Label")
-name_container = NodePath("../TextContainer/MarginContainer/VBoxContainer/PanelContainer2")
-instruction_handler = NodePath("../instructionHandler")
-
-[node name="instructionHandler" type="Node" parent="."]
-script = ExtResource("18_fyspd")

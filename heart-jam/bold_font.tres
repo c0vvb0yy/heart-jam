@@ -1,0 +1,6 @@
+[gd_resource type="SystemFont" format=3 uid="uid://klsmfafmavaa"]
+
+[resource]
+font_names = PackedStringArray("Day Roman")
+font_italic = true
+oversampling = 0.7

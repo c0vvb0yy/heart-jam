@@ -1,0 +1,2143 @@
+{
+	"editor": {
+		"current_page_number": 0,
+		"page_view": 0,
+		"text_size_id": 4
+	},
+	"pages": {
+		"dropdown_dialog_arguments": [
+			"amber-emotion",
+			"aether-emotion"
+		],
+		"dropdown_title_for_dialog_syntax": "speaker",
+		"dropdown_titles": [
+			"amber-emotion",
+			"aether-emotion",
+			"speaker"
+		],
+		"dropdowns": {
+			"aether-emotion": [
+				"neutral"
+			],
+			"amber-emotion": [
+				"neutral",
+				"happy"
+			],
+			"character": [
+				"narrator",
+				"amber"
+			],
+			"speaker": [
+				"iri",
+				"aether",
+				"aenthroppe",
+				"???"
+			]
+		},
+		"empty_strings_for_l10n": false,
+		"facts": {
+			"liked amber": false
+		},
+		"file_config": {
+			"evaluator_paths": [
+				"res://sample/inline_eval.gd"
+			]
+		},
+		"head_defaults": [
+			{
+				"data_type": 0,
+				"property_name": "property0",
+				"values": [
+					"value1",
+					null
+				]
+			}
+		],
+		"instruction_templates": {
+			"apply_filter_room_one": {
+				"arg_types": [
+					"bool"
+				],
+				"args": [
+					"visible"
+				]
+			},
+			"black_fade": {
+				"arg_types": [
+					"float",
+					"float",
+					"float",
+					"bool",
+					"string",
+					"string",
+					"float",
+					"float",
+					"float",
+					"bool"
+				],
+				"args": [
+					"fade_in",
+					"hold_time",
+					"fade_out",
+					"hide_characters",
+					"new_background",
+					"new_bgm",
+					"red",
+					"blue",
+					"green",
+					"wait_for_completion"
+				]
+			},
+			"control_camera": {
+				"arg_types": [
+					"float",
+					"float",
+					"float",
+					"float"
+				],
+				"args": [
+					"zoom",
+					"x",
+					"y",
+					"duration"
+				]
+			},
+			"cum": {
+				"arg_types": [
+					"string"
+				],
+				"args": [
+					"voice"
+				]
+			},
+			"fade_character_in": {
+				"arg_types": [
+					"string",
+					"float"
+				],
+				"args": [
+					"character_name",
+					"fade_duration"
+				]
+			},
+			"glitch_room_one": {
+				"arg_types": [
+					"float"
+				],
+				"args": [
+					"loops"
+				]
+			},
+			"hide_all_characters": {
+				"arg_types": [],
+				"args": []
+			},
+			"hide_cg": {
+				"arg_types": [],
+				"args": []
+			},
+			"move_camera_to": {
+				"arg_types": [
+					"float",
+					"float",
+					"float"
+				],
+				"args": [
+					"x",
+					"y",
+					"duration"
+				]
+			},
+			"play_chapter_intro": {
+				"arg_types": [
+					"string",
+					"string",
+					"string",
+					"float",
+					"string"
+				],
+				"args": [
+					"pov_name",
+					"bottom_text",
+					"new_background",
+					"zoom",
+					"bgm"
+				]
+			},
+			"play_sfx": {
+				"arg_types": [
+					"string"
+				],
+				"args": [
+					"name"
+				]
+			},
+			"roll_credits": {
+				"arg_types": [],
+				"args": []
+			},
+			"set_background": {
+				"arg_types": [
+					"string",
+					"float"
+				],
+				"args": [
+					"name",
+					"fade_time"
+				]
+			},
+			"set_bgm": {
+				"arg_types": [
+					"string",
+					"float"
+				],
+				"args": [
+					"name",
+					"fade_in"
+				]
+			},
+			"set_character_name": {
+				"arg_types": [
+					"string",
+					"string"
+				],
+				"args": [
+					"character",
+					"name"
+				]
+			},
+			"set_emotion": {
+				"arg_types": [
+					"string",
+					"string"
+				],
+				"args": [
+					"actor_name",
+					"emotion_name"
+				]
+			},
+			"set_eye_progress": {
+				"arg_types": [
+					"float"
+				],
+				"args": [
+					"value"
+				]
+			},
+			"set_fade_out": {
+				"arg_types": [
+					"float",
+					"float"
+				],
+				"args": [
+					"lod",
+					"mix"
+				]
+			},
+			"set_object_visible": {
+				"arg_types": [
+					"string",
+					"bool"
+				],
+				"args": [
+					"object_name",
+					"visibility"
+				]
+			},
+			"set_static": {
+				"arg_types": [
+					"float"
+				],
+				"args": [
+					"level"
+				]
+			},
+			"set_sun": {
+				"arg_types": [
+					"string",
+					"float"
+				],
+				"args": [
+					"property",
+					"value"
+				]
+			},
+			"set_text_speed": {
+				"arg_types": [
+					"float"
+				],
+				"args": [
+					"value"
+				]
+			},
+			"set_text_style": {
+				"arg_types": [
+					"string"
+				],
+				"args": [
+					"style"
+				]
+			},
+			"set_x_position": {
+				"arg_types": [
+					"string",
+					"float",
+					"float",
+					"bool"
+				],
+				"args": [
+					"character_name",
+					"index",
+					"time",
+					"wait_for_reposition"
+				]
+			},
+			"shake_camera": {
+				"arg_types": [
+					"float"
+				],
+				"args": [
+					"strength"
+				]
+			},
+			"show_cg": {
+				"arg_types": [
+					"string",
+					"float",
+					"bool"
+				],
+				"args": [
+					"name",
+					"fade_in_time",
+					"continue_dialog_through_cg"
+				]
+			},
+			"show_character": {
+				"arg_types": [
+					"string",
+					"bool"
+				],
+				"args": [
+					"character_name",
+					"clear_others"
+				]
+			},
+			"show_letter": {
+				"arg_types": [],
+				"args": []
+			},
+			"splatter_blood": {
+				"arg_types": [
+					"float"
+				],
+				"args": [
+					"amount"
+				]
+			},
+			"sway_camera": {
+				"arg_types": [
+					"float"
+				],
+				"args": [
+					"intensity"
+				]
+			},
+			"use_ui": {
+				"arg_types": [
+					"float"
+				],
+				"args": [
+					"id"
+				]
+			},
+			"wound_fx": {
+				"arg_types": [
+					"float",
+					"float"
+				],
+				"args": [
+					"shake_intensity",
+					"splatter_count"
+				]
+			},
+			"zoom_to": {
+				"arg_types": [
+					"float",
+					"float"
+				],
+				"args": [
+					"value",
+					"duration"
+				]
+			}
+		},
+		"locales_to_export": [
+			"af_ZA",
+			"sq_AL",
+			"ar_SA",
+			"hy_AM",
+			"az_AZ",
+			"eu_ES",
+			"be_BY",
+			"bn_IN",
+			"bs_BA",
+			"bg_BG",
+			"ca_ES",
+			"zh_CN",
+			"zh_TW",
+			"hr_HR",
+			"cs_CZ",
+			"da_DK",
+			"nl_NL",
+			"en_US",
+			"et_EE",
+			"fo_FO",
+			"fi_FI",
+			"fr_FR",
+			"gl_ES",
+			"ka_GE",
+			"de_DE",
+			"el_GR",
+			"gu_IN",
+			"he_IL",
+			"hi_IN",
+			"hu_HU",
+			"is_IS",
+			"id_ID",
+			"it_IT",
+			"ja_JP",
+			"kn_IN",
+			"kk_KZ",
+			"kok_IN",
+			"ko_KR",
+			"lv_LV",
+			"lt_LT",
+			"mk_MK",
+			"ms_MY",
+			"ml_IN",
+			"mt_MT",
+			"mr_IN",
+			"mn_MN",
+			"se_NO",
+			"nb_NO",
+			"nn_NO",
+			"fa_IR",
+			"pl_PL",
+			"pt_BR",
+			"pa_IN",
+			"ro_RO",
+			"ru_RU",
+			"sr_BA",
+			"sk_SK",
+			"es_ES",
+			"sw_KE",
+			"sv_SE",
+			"syr_SY",
+			"ta_IN",
+			"te_IN",
+			"th_TH",
+			"tn_ZA",
+			"tr_TR",
+			"uk_UA",
+			"uz_UZ",
+			"vi_VN",
+			"cy_GB",
+			"xh_ZA",
+			"zu_ZA"
+		],
+		"page_data": {
+			"0": {
+				"facts": {
+					"fact_data_by_name": {
+
+					},
+					"meta.visible": false
+				},
+				"lines": [
+					{
+						"address": "0.0",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								1.2,
+								1.2,
+								1.2,
+								true,
+								"act1",
+								"default",
+								0,
+								0,
+								0,
+								true
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "black_fade(1.2, 1.2, 1.2, true, act1, default, 0.0,0.0,0.0, true)",
+							"meta.validation_status": "OK",
+							"name": "black_fade",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 0,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.1",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								1
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "use_ui(1)",
+							"meta.validation_status": "OK",
+							"name": "use_ui",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 1,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.2",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								"default",
+								2
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "set_bgm(default, 2)",
+							"meta.validation_status": "OK",
+							"name": "set_bgm",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 2,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.3",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>iri: ..."
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 3,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.4",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								"Aether",
+								1.2
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "fade_character_in(Aether, 1.2)",
+							"meta.validation_status": "OK",
+							"name": "fade_character_in",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 4,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.5",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>iri: Ah, <ap>there it is. <ap>There you are.<ap>\n[b]Perfection.[/b]\n[]>iri: How nice it is to look at you.<ap>\nI can only imagine how nice it must be, to be you. <ap>Accomplished, <ap> tolerated, <ap> beloved.\n[]>iri: Every day you go to work. Make money.<ap> Socialize with your coworkers. \n[]>iri: You feel good.\n[]>iri: And every night you spend with your friends. These people love you <ap>and you love them. <lc> [b]Unconditionally.[/b]\n[]>iri: And in between you even find the time to keep your room in shape! <ap>💖\n[]>iri: You got everything you ever needed. <ap>You're save. <ap>You're settled.\n[]>iri: The way you fit in,<ap> it makes me happy.<ap> Everything has been leading up to this.<ap> To you, here. <ap> Gods have been killed because there was more faith in you.\n[]>iri: Aren't you glad to be in this role? To be revered?\n[]>"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 5,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.6",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"auto_switch": false,
+							"choice_title": "",
+							"choices": [
+								{
+									"address": "0.6.0",
+									"behavior_after_first_selection": 0,
+									"choice_text.disabled": "You dont get a say in this",
+									"choice_text.enabled": "no",
+									"choice_text.enabled_as_default": false,
+									"conditionals": {
+										"behavior": 0,
+										"behavior_key": "Show",
+										"facts": {
+											"fact_data_by_name": {
+
+											},
+											"meta.visible": false
+										},
+										"meta.visible": false,
+										"operand": 0,
+										"operand_args": [],
+										"operand_key": "AND"
+									},
+									"do_jump_page": false,
+									"facts": {
+										"fact_data_by_name": {
+
+										},
+										"meta.visible": false
+									},
+									"jump_address_mode": 0,
+									"loop_address_mode": 0,
+									"loopback": false,
+									"loopback_target_line": 3,
+									"loopback_target_page": 0,
+									"meta.jump_page_before_auto_switch": false,
+									"meta.selector": {
+										"selected": false
+									},
+									"target_line": 3,
+									"target_page": 0
+								},
+								{
+									"address": "0.6.1",
+									"behavior_after_first_selection": 0,
+									"choice_text.disabled": "",
+									"choice_text.enabled": "*Nod.*",
+									"choice_text.enabled_as_default": true,
+									"conditionals": {
+										"behavior": 0,
+										"behavior_key": "Show",
+										"facts": {
+											"fact_data_by_name": {
+
+											},
+											"meta.visible": false
+										},
+										"meta.visible": false,
+										"operand": 0,
+										"operand_args": [],
+										"operand_key": "AND"
+									},
+									"do_jump_page": false,
+									"facts": {
+										"fact_data_by_name": {
+
+										},
+										"meta.visible": false
+									},
+									"jump_address_mode": 0,
+									"loop_address_mode": 0,
+									"loopback": false,
+									"loopback_target_line": 3,
+									"loopback_target_page": 0,
+									"meta.jump_page_before_auto_switch": false,
+									"meta.selector": {
+										"selected": false
+									},
+									"target_line": 3,
+									"target_page": 0
+								}
+							],
+							"meta.do_jump_page": true
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 1,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 6,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.7",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>iri: Of course you are. This stasis you've been granted <ap>many would give much more than you to get here.\n[]>iri: But you deserve it <ap>💗\n[]>iri: And so, dutifully, you continue. \n[]>iri: Day in. <mp>Day out. <mp>Day in. <mp>Day out. <mp>Day in-\n"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 7,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.8",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								0.03
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "glitch_room_one(0.03)",
+							"meta.validation_status": "OK",
+							"name": "glitch_room_one",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 8,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.9",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>iri: What was that? <ap> <advance>"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 9,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.10",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								0
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "glitch_room_one(0.0)",
+							"meta.validation_status": "OK",
+							"name": "glitch_room_one",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 10,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.11",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>iri: [i]...[/i]\n[]>iri: Day.<ap> out. <\n[]>iri: Day in and out<ap> you spend in this maze of mirrors. Surrounded by beauty.\n[]>iri: Say,<ap> you glamorous thing,<ap> don't you recognize your splendor?"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 11,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.12",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"auto_switch": false,
+							"choice_title": "",
+							"choices": [
+								{
+									"address": "0.12.0",
+									"behavior_after_first_selection": 0,
+									"choice_text.disabled": "You've never known what you look like",
+									"choice_text.enabled": "",
+									"choice_text.enabled_as_default": false,
+									"conditionals": {
+										"behavior": 0,
+										"behavior_key": "Show",
+										"facts": {
+											"fact_data_by_name": {
+
+											},
+											"meta.visible": false
+										},
+										"meta.visible": false,
+										"operand": 0,
+										"operand_args": [],
+										"operand_key": "AND"
+									},
+									"do_jump_page": false,
+									"facts": {
+										"fact_data_by_name": {
+
+										},
+										"meta.visible": false
+									},
+									"jump_address_mode": 0,
+									"loop_address_mode": 0,
+									"loopback": false,
+									"loopback_target_line": 0,
+									"loopback_target_page": 0,
+									"meta.jump_page_before_auto_switch": false,
+									"meta.selector": {
+										"selected": false
+									},
+									"target_line": 0,
+									"target_page": 0
+								},
+								{
+									"address": "0.12.1",
+									"behavior_after_first_selection": 0,
+									"choice_text.disabled": "",
+									"choice_text.enabled": "There are no mirrors in this maze",
+									"choice_text.enabled_as_default": true,
+									"conditionals": {
+										"behavior": 0,
+										"behavior_key": "Show",
+										"facts": {
+											"fact_data_by_name": {
+
+											},
+											"meta.visible": false
+										},
+										"meta.visible": false,
+										"operand": 0,
+										"operand_args": [],
+										"operand_key": "AND"
+									},
+									"do_jump_page": false,
+									"facts": {
+										"fact_data_by_name": {
+
+										},
+										"meta.visible": false
+									},
+									"jump_address_mode": 0,
+									"loop_address_mode": 0,
+									"loopback": false,
+									"loopback_target_line": 0,
+									"loopback_target_page": 0,
+									"meta.jump_page_before_auto_switch": false,
+									"meta.selector": {
+										"selected": false
+									},
+									"target_line": 0,
+									"target_page": 0
+								}
+							],
+							"meta.do_jump_page": true
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 1,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 12,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.13",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								true
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "apply_filter_room_one(true)",
+							"meta.validation_status": "OK",
+							"name": "apply_filter_room_one",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 13,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.14",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>iri: [jiggle h=10 v=2]What are you talking about?[/jiggle] <ap>This isn't you. <ap>Stop this."
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 14,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.15",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								40
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "set_text_speed(40)",
+							"meta.validation_status": "OK",
+							"name": "set_text_speed",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 15,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.16",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>???: You stop. "
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 16,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.17",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								20
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "set_text_speed(20)",
+							"meta.validation_status": "OK",
+							"name": "set_text_speed",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 17,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.18",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								1.2,
+								1.2,
+								1.2,
+								true,
+								"act1",
+								"default",
+								0,
+								0,
+								0,
+								false
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "black_fade(1.2, 1.2, 1.2, true, act1, default, 0.0,0.0,0.0, false)",
+							"meta.validation_status": "OK",
+							"name": "black_fade",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 18,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.19",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>???: I cannot cease."
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 19,
+						"meta.selector": {
+							"selected": false
+						}
+					}
+				],
+				"meta.scroll_vertical": 0,
+				"meta.selected": false,
+				"next": 1,
+				"number": 0,
+				"page_key": "",
+				"terminate": false
+			},
+			"1": {
+				"facts": {
+					"fact_data_by_name": {
+
+					},
+					"meta.visible": false
+				},
+				"lines": [
+					{
+						"address": "1.0",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"narrator",
+								"amber"
+							],
+							"active_actors_title": "character",
+							"content": "[]>iri:Diisis uses so-called \"Instructions\" for more complex behavior. Read up on how to implement them on GitHub. The rough gist is that they work like functions in Godot. You give them names and arguments, and can then call them inside DIISIS.\n[]>iri:For this, there are two approaches: Lines and inline. You can dedicate an entire [url=https://github.com/SnekOfSpice/dialog-editor/wiki/Line-Type:-Instruction]Line[/url] to an Instruction, or use an appropriate [url=https://github.com/SnekOfSpice/dialog-editor/wiki/InlineEvaluator#evaluated-tags]Tag[/url] to call them from inside the text."
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 0,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.1",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								20
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": true,
+							"meta.reverse_text": "",
+							"meta.text": "shake_camera(20)",
+							"meta.validation_status": "OK",
+							"name": "shake_camera",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 1,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.2",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"narrator",
+								"amber"
+							],
+							"active_actors_title": "character",
+							"content": "[]>iri:Like so.\n[]>amber: Or <call:shake_camera,40>so :3"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 2,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.3",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"narrator",
+								"amber"
+							],
+							"active_actors_title": "character",
+							"content": "[]>iri:This template also comes with CG support. <lc>I will use this to tell you about where I got the music for this demo."
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 3,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.4",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								"music",
+								2,
+								true
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "show_cg(music, 2.0, true)",
+							"meta.validation_status": "OK",
+							"name": "show_cg",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 4,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.5",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"narrator",
+								"amber"
+							],
+							"active_actors_title": "character",
+							"content": "[]>iri:Loyalty Freak Music is anticapitalist and antifascist. <ap>[b]Those are good things.[/b]\n<mp>And the music rocks too. (As you can see in the script, newline characters don't need to be escaped in any capacity.)\n[]>iri:CGs are fullscreen illustrations that you use to highlight cool scenes in your visual novel. <mp>They are absolutely not [i]necessary[/i] - but can add some nice polish."
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 5,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.6",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"narrator",
+								"amber"
+							],
+							"active_actors_title": "character",
+							"content": "[]>iri:When this line ends with the next click, the CG will disappear again. <mp>Tada! <call:hide_cg>"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 6,
+						"meta.selector": {
+							"selected": false
+						}
+					}
+				],
+				"meta.scroll_vertical": 741,
+				"meta.selected": false,
+				"next": 2,
+				"number": 1,
+				"page_key": "",
+				"terminate": false
+			},
+			"2": {
+				"facts": {
+					"fact_data_by_name": {
+
+					},
+					"meta.visible": false
+				},
+				"lines": [
+					{
+						"address": "2.0",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"narrator",
+								"amber"
+							],
+							"active_actors_title": "character",
+							"content": "[]>iri:With that, we can start to wrap up.\n[]>amber:Change of scenery please!"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 0,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "2.1",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								"skyline",
+								2
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "set_background(skyline, 2)",
+							"meta.validation_status": "OK",
+							"name": "set_background",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 1,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "2.2",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"narrator",
+								"amber"
+							],
+							"active_actors_title": "character",
+							"content": "[]>iri:There you go <3\n[]>iri:Dear reader; This template comes with all the simple things you need to make your own visual novel. There's a guide for the setup [url=https://github.com/SnekOfSpice/dialog-editor/wiki/Using-the-visual-novel-template]here[/url]. I would recommend you still know the very basics of Godot, maybe look into how to use themes."
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 2,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "2.3",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"narrator",
+								"amber"
+							],
+							"active_actors_title": "character",
+							"content": "[]>iri:How can you leave this place again? Well you can just terminate the page by not having it point to a page again. <mp>[rainbow freq=1.0 sat=0.8 val=0.8]Go out there and create![/rainbow]\n[]>iri:This demo and DIISIS entirely was made by [url=https://snekofspice.itch.io/]Snek[/url].\n[]>iri:Music by [url=https://chezmonplaisir.bandcamp.com/album/chill-for-real]Loyalty Freak Music[/url].\n[]>iri:Amber art by [url=https://x.com/_10qi]10qi[/url]."
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 3,
+						"meta.selector": {
+							"selected": false
+						}
+					}
+				],
+				"meta.scroll_vertical": 0,
+				"meta.selected": false,
+				"next": 0,
+				"number": 2,
+				"page_key": "",
+				"terminate": true
+			}
+		},
+		"text_lead_time_other_actor": 0,
+		"text_lead_time_same_actor": 0,
+		"use_dialog_syntax": true
+	}
+}

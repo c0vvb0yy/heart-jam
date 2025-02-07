@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://choldoo01yphk"]
+
+[ext_resource type="Shader" path="res://shaders/palette_cycle.gdshader" id="1_wwhgj"]
+[ext_resource type="Texture2D" uid="uid://co7s6813pofhw" path="res://gradients/gradient_smooth_pearl.png" id="2_r3vx2"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_wwhgj")
+shader_parameter/speed_scale = 0.1
+shader_parameter/gradient = ExtResource("2_r3vx2")

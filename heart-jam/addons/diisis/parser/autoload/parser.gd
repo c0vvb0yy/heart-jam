@@ -60,7 +60,7 @@ func _get_live_source_path(suppress_error:=false) -> String:
 	if not source_file_override.is_empty():
 		source_path = source_file_override
 	else:
-		source_path = DiisisEditorUtil.get_project_source_file_path(suppress_error)
+		source_path = DiisisEditorUtil.get_project_source_file_path()
 		if source_path.is_empty():
 			if not suppress_error:
 				push_error("Parser could not find project source file. Either set Parser.source_file_override manually, or make sure that the DIISIS file has been saved at least once.")
@@ -324,6 +324,13 @@ func get_previous_address_line_type() -> DIISIS.LineType:
 	
 	return int(page_data.get(prev_page).get("lines")[prev_line].get("line_type"))
 
+func get_line_type_by_address(address:String) -> DIISIS.LineType:
+	var parts = DiisisEditorUtil.get_split_address(address)
+	var prev_page = parts[0]
+	var prev_line = parts[1]
+	
+	return int(page_data.get(prev_page).get("lines")[prev_line].get("line_type"))
+
 func go_back():
 	var trail_shift = -1
 	var previous_line_type = get_previous_address_line_type()
@@ -377,15 +384,19 @@ func go_back():
 	var parts = DiisisEditorUtil.get_split_address(previous_address)
 	var prev_page = parts[0]
 	var prev_line = parts[1]
-	ParserEvents.go_back_accepted.emit(prev_page, prev_line)
-	if not address_trail.is_empty():
-		address_trail.resize(address_trail_index)
-	if prev_page == page_index:
-		read_line(prev_line)
-	else:
-		read_page(prev_page, prev_line)
-	line_reader._go_to_end_of_dialog_line()
-	address_trail_index = address_trail.size() - 1
+	if not get_line_type_by_address(previous_address) in [DIISIS.LineType.Choice, DIISIS.LineType.Folder]:
+		ParserEvents.go_back_accepted.emit(prev_page, prev_line)
+		if not address_trail.is_empty():
+			address_trail.resize(address_trail_index)
+		if prev_page == page_index:
+			read_line(prev_line)
+		else:
+			read_page(prev_page, prev_line)
+		if trail_shift == 0:
+			line_reader._go_to_start_of_dialog_line()
+		elif trail_shift != 0:
+			line_reader._go_to_end_of_dialog_line()
+		address_trail_index = address_trail.size() - 1
 
 func read_line(index: int):
 	if lines.size() == 0:

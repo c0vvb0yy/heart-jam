@@ -210,3 +210,11 @@ func _on_reset_scale_button_pressed() -> void:
 
 func _on_help_button_pressed() -> void:
 	OS.shell_open("https://github.com/SnekOfSpice/dialog-editor/wiki/")
+
+
+func _on_editor_history_altered(is_altered: bool) -> void:
+	if is_altered:
+		if not title.ends_with("*"):
+			title = str(title, "*")
+	else:
+		title = title.trim_suffix("*")

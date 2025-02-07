@@ -1,7 +1,7 @@
 shader_type canvas_item;
 #include "res://shaders/constants.gdshaderinc"
 
-uniform sampler2D gradient: repeat_enable;
+uniform sampler2D gradient: repeat_enable, filter_nearest;
 uniform float speed_scale = 0.07;
 
 

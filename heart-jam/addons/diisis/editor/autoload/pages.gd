@@ -5,9 +5,9 @@ extends Node
 var head_defaults := []
 var auto_complete_context := ""
 
-var dropdowns := {"character": ["dii", "sis"]}
-var dropdown_titles := ["character"]
-var dropdown_dialog_arguments := []
+var dropdowns := {"character": ["narrator", "amber"], "amber-emotion" : ["neutral", "happy"]}
+var dropdown_titles := ["amber-emotion"]
+var dropdown_dialog_arguments := ["amber-emotion"]
 var dropdown_title_for_dialog_syntax := "character"
 var use_dialog_syntax := true
 var text_lead_time_same_actor := 0.0
@@ -21,142 +21,7 @@ const ALLOWED_INSTRUCTION_NAME_CHARACTERS := [
 var empty_strings_for_l10n := false
 var locales_to_export := ["af_ZA", "sq_AL", "ar_SA", "hy_AM", "az_AZ", "eu_ES", "be_BY", "bn_IN", "bs_BA", "bg_BG", "ca_ES", "zh_CN", "zh_TW", "hr_HR", "cs_CZ", "da_DK", "nl_NL", "en_US", "et_EE", "fo_FO", "fi_FI", "fr_FR", "gl_ES", "ka_GE", "de_DE", "el_GR", "gu_IN", "he_IL", "hi_IN", "hu_HU", "is_IS", "id_ID", "it_IT", "ja_JP", "kn_IN", "kk_KZ", "kok_IN", "ko_KR", "lv_LV", "lt_LT", "mk_MK", "ms_MY", "ml_IN", "mt_MT", "mr_IN", "mn_MN", "se_NO", "nb_NO", "nn_NO", "fa_IR", "pl_PL", "pt_BR", "pa_IN", "ro_RO", "ru_RU", "sr_BA", "sk_SK", "es_ES", "sw_KE", "sv_SE", "syr_SY", "ta_IN", "te_IN", "th_TH", "tn_ZA", "tr_TR", "uk_UA", "uz_UZ", "vi_VN", "cy_GB", "xh_ZA", "zu_ZA"]
 const DOMINANT_LOCALES := ["af_ZA", "sq_AL", "ar_SA", "hy_AM", "az_AZ", "eu_ES", "be_BY", "bn_IN", "bs_BA", "bg_BG", "ca_ES", "zh_CN", "zh_TW", "hr_HR", "cs_CZ", "da_DK", "nl_NL", "en_US", "et_EE", "fo_FO", "fi_FI", "fr_FR", "gl_ES", "ka_GE", "de_DE", "el_GR", "gu_IN", "he_IL", "hi_IN", "hu_HU", "is_IS", "id_ID", "it_IT", "ja_JP", "kn_IN", "kk_KZ", "kok_IN", "ko_KR", "lv_LV", "lt_LT", "mk_MK", "ms_MY", "ml_IN", "mt_MT", "mr_IN", "mn_MN", "se_NO", "nb_NO", "nn_NO", "fa_IR", "pl_PL", "pt_BR", "pa_IN", "ro_RO", "ru_RU", "sr_BA", "sk_SK", "es_ES", "sw_KE", "sv_SE", "syr_SY", "ta_IN", "te_IN", "th_TH", "tn_ZA", "tr_TR", "uk_UA", "uz_UZ", "vi_VN", "cy_GB", "xh_ZA", "zu_ZA"]
-const LOCALES := ["af_ZA",
-"sq_AL",
-"ar_DZ",
-"ar_BH",
-"ar_EG",
-"ar_IQ",
-"ar_JO",
-"ar_KW",
-"ar_LB",
-"ar_LY",
-"ar_MA",
-"ar_OM",
-"ar_QA",
-"ar_SA",
-"ar_SY",
-"ar_TN",
-"ar_AE",
-"ar_YE",
-"hy_AM",
-"az_AZ",
-"eu_ES",
-"be_BY",
-"bn_IN",
-"bs_BA",
-"bg_BG",
-"ca_ES",
-"zh_CN",
-"zh_HK",
-"zh_MO",
-"zh_SG",
-"zh_TW",
-"hr_HR",
-"cs_CZ",
-"da_DK",
-"nl_BE",
-"nl_NL",
-"en_AU",
-"en_BZ",
-"en_CA",
-"en_IE",
-"en_JM",
-"en_NZ",
-"en_PH",
-"en_ZA",
-"en_TT",
-"en_VI",
-"en_GB",
-"en_US",
-"en_ZW",
-"et_EE",
-"fo_FO",
-"fi_FI",
-"fr_BE",
-"fr_CA",
-"fr_FR",
-"fr_LU",
-"fr_MC",
-"fr_CH",
-"gl_ES",
-"ka_GE",
-"de_AT",
-"de_DE",
-"de_LI",
-"de_LU",
-"de_CH",
-"el_GR",
-"gu_IN",
-"he_IL",
-"hi_IN",
-"hu_HU",
-"is_IS",
-"id_ID",
-"it_IT",
-"it_CH",
-"ja_JP",
-"kn_IN",
-"kk_KZ",
-"kok_IN",
-"ko_KR",
-"lv_LV",
-"lt_LT",
-"mk_MK",
-"ms_BN",
-"ms_MY",
-"ml_IN",
-"mt_MT",
-"mr_IN",
-"mn_MN",
-"se_NO",
-"nb_NO",
-"nn_NO",
-"fa_IR",
-"pl_PL",
-"pt_BR",
-"pt_PT",
-"pa_IN",
-"ro_RO",
-"ru_RU",
-"sr_BA",
-"sr_CS",
-"sk_SK",
-"sl_SI",
-"es_AR",
-"es_BO",
-"es_CL",
-"es_CO",
-"es_CR",
-"es_DO",
-"es_EC",
-"es_SV",
-"es_GT",
-"es_HN",
-"es_MX",
-"es_NI",
-"es_PA",
-"es_PY",
-"es_PE",
-"es_PR",
-"es_ES",
-"es_UY",
-"es_VE",
-"sw_KE",
-"sv_FI",
-"sv_SE",
-"syr_SY",
-"ta_IN",
-"te_IN",
-"th_TH",
-"tn_ZA",
-"tr_TR",
-"uk_UA",
-"uz_UZ",
-"vi_VN",
-"cy_GB",
-"xh_ZA",
-"zu_ZA",]
+const LOCALES := ["af_ZA","sq_AL","ar_DZ","ar_BH","ar_EG","ar_IQ","ar_JO","ar_KW","ar_LB","ar_LY","ar_MA","ar_OM","ar_QA","ar_SA","ar_SY","ar_TN","ar_AE","ar_YE","hy_AM","az_AZ","eu_ES","be_BY","bn_IN","bs_BA","bg_BG","ca_ES","zh_CN","zh_HK","zh_MO","zh_SG","zh_TW","hr_HR","cs_CZ","da_DK","nl_BE","nl_NL","en_AU","en_BZ","en_CA","en_IE","en_JM","en_NZ","en_PH","en_ZA","en_TT","en_VI","en_GB","en_US","en_ZW","et_EE","fo_FO","fi_FI","fr_BE","fr_CA","fr_FR","fr_LU","fr_MC","fr_CH","gl_ES","ka_GE","de_AT","de_DE","de_LI","de_LU","de_CH","el_GR","gu_IN","he_IL","hi_IN","hu_HU","is_IS","id_ID","it_IT","it_CH","ja_JP","kn_IN","kk_KZ","kok_IN","ko_KR","lv_LV","lt_LT","mk_MK","ms_BN","ms_MY","ml_IN","mt_MT","mr_IN","mn_MN","se_NO","nb_NO","nn_NO","fa_IR","pl_PL","pt_BR","pt_PT","pa_IN","ro_RO","ru_RU","sr_BA","sr_CS","sk_SK","sl_SI","es_AR","es_BO","es_CL","es_CO","es_CR","es_DO","es_EC","es_SV","es_GT","es_HN","es_MX","es_NI","es_PA","es_PY","es_PE","es_PR","es_ES","es_UY","es_VE","sw_KE","sv_FI","sv_SE","syr_SY","ta_IN","te_IN","th_TH","tn_ZA","tr_TR","uk_UA","uz_UZ","vi_VN","cy_GB","xh_ZA","zu_ZA",]
 
 var facts := {}
 var local_line_insert_offset:int
@@ -370,16 +235,16 @@ func change_line_references_directional(on_page:int, starting_index_of_change:in
 		for line in page.get("lines"):
 			if line.get("line_type") == DIISIS.LineType.Choice:
 				var content = line.get("content")
-				for choice in content.get("choices"):
+				for choice : Dictionary in content.get("choices"):
 					var page_number : int = page.get("number")
-					if choice.get("target_page") == on_page:
+					if choice.get("target_page") == on_page and choice.get("jump_address_mode", AddressModeButton.Mode.Objectt) == AddressModeButton.Mode.Objectt:
 						var target_line : int = choice.get("target_line")
 						if target_line >= starting_index_of_change and target_line <= end_index_of_change:
 							choice["target_line"] = target_line + operation
 							if page_number == current_page_number:
 								edited_current_page = true
 					
-					if choice.get("loopback_target_page") == on_page:
+					if choice.get("loopback_target_page") == on_page and choice.get("loop_address_mode", AddressModeButton.Mode.Objectt) == AddressModeButton.Mode.Objectt:
 						var loopback_target_line : int = choice.get("loopback_target_line")
 						if loopback_target_line >= starting_index_of_change and loopback_target_line <= end_index_of_change:
 							choice["loopback_target_line"] = loopback_target_line + operation
@@ -403,9 +268,12 @@ func change_page_references_dir(changed_page: int, operation:int):
 			if line.get("line_type") == DIISIS.LineType.Choice:
 				var content = line.get("content")
 				var choices = content.get("choices")
-				for choice in choices:
-					if choice.get("target_page") >= changed_page:
+				for choice : Dictionary in choices:
+					if choice.get("target_page") >= changed_page and choice.get("jump_address_mode", AddressModeButton.Mode.Objectt) == AddressModeButton.Mode.Objectt:
 						choice["target_page"] = choice.get("target_page") + operation
+					if choice.get("loopback_target_page") >= changed_page and choice.get("loop_address_mode", AddressModeButton.Mode.Objectt) == AddressModeButton.Mode.Objectt:
+						choice["loopback_target_page"] = choice.get("loopback_target_page") + operation
+	
 	await get_tree().process_frame
 	editor.refresh(false)
 
@@ -535,12 +403,6 @@ func get_instruction_signature(instruction_name:String) -> String:
 	var arg_names : Array = instruction_templates.get(instruction_name).get("args")
 	while i < arg_types.size():
 		result += arg_names[i]
-		result += ": "
-		
-		if arg_types[i] == "string":
-			result += "String"
-		else:
-			result += arg_types[i]
 		
 		if i < arg_types.size() - 1:
 			result += ", "
@@ -548,6 +410,19 @@ func get_instruction_signature(instruction_name:String) -> String:
 		i += 1
 	
 	result += ") -> bool:"
+	
+	i = 0
+	while i < arg_types.size():
+		var type_str:String
+		if arg_types[i] == "string":
+			type_str = "String"
+		else:
+			type_str = arg_types[i]
+		
+		result += str("\n\t", arg_names[i], " = ", type_str, "(", arg_names[i], ")")
+		
+		i += 1
+	
 	result += "\n\t# Return true if you want the LineReader to wait until its InstructionHandler has emitted instruction_completed."
 	result += "\n\t# (Needs to be called by your code from somewhere.)"
 	result += "\n\t# (The most direct approach is Parser.line_reader.instruction_handler.instruction_completed.emit().)"
@@ -1051,7 +926,7 @@ func get_evaluator_properties() -> Array:
 	
 	return methods
 
-func search_string(substr:String, case_insensitive:=false):
+func search_string(substr:String, case_insensitive:=false, include_tags:=false):
 	var found_facts := {}
 	for fact : String in facts:
 		if (case_insensitive and fact.findn(substr) != -1) or (not case_insensitive and fact.find(substr) != -1):
@@ -1074,6 +949,22 @@ func search_string(substr:String, case_insensitive:=false):
 					choice_index += 1
 			elif line.get("line_type") == DIISIS.LineType.Text:
 				var text : String = line.get("content", {}).get("content", "")
+				if not include_tags:
+					var scan_index := 0
+					var pairs = ["<>", "[]"]
+					for pair in pairs:
+						while scan_index < text.length():
+							if text[scan_index] == pair[0]:
+								var local_scan_index := scan_index
+								var control_to_replace := ""
+								while text[local_scan_index] != pair[1]:
+									control_to_replace += text[local_scan_index]
+									local_scan_index += 1
+								control_to_replace += pair[1]
+								text = text.replace(control_to_replace, "")
+								scan_index -= control_to_replace.length()
+							scan_index += 1
+				
 				if (case_insensitive and text.findn(substr) != -1) or (not case_insensitive and text.find(substr) != -1):
 					found_text[str(page_index, ".", line_index)] = text
 			elif line.get("line_type") == DIISIS.LineType.Instruction:

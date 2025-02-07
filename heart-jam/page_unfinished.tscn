@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqebnrtcorgt4"]
+
+[ext_resource type="Texture2D" uid="uid://delwppkladi0u" path="res://addons/diisis/editor/visuals/more.svg" id="1_aidi5"]
+
+[node name="PageUnfinished1" type="TextureRect"]
+offset_left = 1074.0
+offset_top = 1129.0
+offset_right = 1090.0
+offset_bottom = 1161.0
+size_flags_horizontal = 0
+mouse_filter = 2
+texture = ExtResource("1_aidi5")
+stretch_mode = 2

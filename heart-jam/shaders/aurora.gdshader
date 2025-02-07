@@ -38,9 +38,9 @@ void fragment() {
 	vec4 result = texture(TEXTURE, scroll_uv);
 	
 	//the sin is optional causes there to be more "play" of the colors
-	//vec4 base_color = texture(gradient_base, vec2(scroll_uv.x + (TIME * color_scroll_speed)+.2, UV.y));
+	vec4 base_color = texture(gradient_base, vec2(scroll_uv.x + (TIME * color_scroll_speed)+.2, UV.y));
 	//float modded_y = smoothstep(scroll_uv.y*debug, 1.0, UV.y);
-	vec4 base_color = texture(gradient_base, vec2(scroll_uv.x, modded_y - TIME*.01));
+	//vec4 base_color = texture(gradient_base, vec2(scroll_uv.x, modded_y - TIME*.01));
 	//we subtract TIME to make the transparency mask move in the opposite direction of the aurora, looks more funky imo :3
 	//also we do UV.y -.01 to get rid of a ugly 1 px wide line that would appear else wise OTL
 	vec4 curve = texture(lower_transparency_mask, vec2(UV.x * curve_horizontal_repition - TIME * .3 * (sin(TIME *.0002)), UV.y -.01 ));// *(sin(TIME *.2)*-3.5+3.5) ));
@@ -53,11 +53,13 @@ void fragment() {
 	//more transparency mixing to create a more "organic" looking result
 	result.a *= mix(0., 2., result.r);
 	//result.a *= mix(0, 1., UV.y);
+	float half_glow = glow_strength * 0.5;
+	float _glow_strength = sin(glow_strength*TIME)*half_glow+half_glow;
 	
 	//more funky color magic, remove/edit as needed 
 	result.rgb *= mix(result.rgb, base_color.rgb, UV.y );
-	result.rgb *= mix(result.rgb, result.rgb*glow_strength,UV.y);
-	result.rgb *= mix(result.rgb, result.rgb*glow_strength, curve.a);
+	result.rgb *= mix(result.rgb, result.rgb*_glow_strength,UV.y);
+	result.rgb *= mix(result.rgb, result.rgb*_glow_strength, curve.a);
 	//gives it an overall richer color
 	vec4 gradient_color = texture(gradient_tint,  vec2(UV.x + TIME * .2, UV.y));
 	result.rgb *= gradient_color.rgb;

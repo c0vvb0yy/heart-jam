@@ -1,0 +1,85 @@
+shader_type canvas_item;
+#include "res://shaders/constants.gdshaderinc"
+
+uniform vec4 lightning_color: source_color;
+
+uniform float size: hint_range (0.,1.) = 0.1;
+uniform float width: hint_range (0.,1.) = 1.;
+uniform float speed = 0.7;
+uniform float cycle = 0.5;
+uniform float ratio = 0.8;
+uniform float time_shift = 9;
+
+uniform int strike_count = 5;
+uniform float strike_delay = 0.25;
+uniform float glow_intensity : hint_range(0.0, 1.0) = 0.9;
+
+uniform sampler2D gradient;
+uniform sampler2D noise : repeat_enable;
+uniform float shift_speed = 1.1;
+
+float rand(float x){
+	return fract(sin(x)*100000.0);
+}
+
+void fragment(){
+	float wave = 0.0;
+	float time = TIME * speed;
+	
+	for(int i = 0; i < strike_count; i++){
+		float strike_offset = float(i) / float(strike_count);
+		float strike_time = floor(time / strike_delay) + strike_offset;
+		float strike_phase = mod(time, strike_delay) / strike_delay;
+		  // Delay the strike based on its offset
+        if (strike_phase < strike_offset) {
+            continue;
+        }
+		
+		float bolt = abs(mod(UV.y * cycle + (rand(TIME / float(i)*speed) + time_shift) * speed * -1., 0.5)-0.25)-0.125;
+		bolt *= 4. * width;
+		//bolt *= min(0, float(i / strike_count));
+		// why 4 ? Because we use mod 0.5, the value be devide by half
+		// and we -0.25 (which is half again) for abs function. So it 25%!
+		
+		// scale down at start and end
+		bolt *=  (0.9 - abs(UV.y-0.5)) * 2.; 
+		
+		float strike_position = rand(strike_time * 10.0) - 0.5;
+        float lightning = 1.0 - step(size * 0.5, abs(UV.x - 0.5 + strike_position + bolt));
+        //lightning = 0.1;
+		wave += lightning;
+	}
+	/*
+	// turn to a line
+	// center align line
+	float wave = abs(UV.x - 0.5 + bolt);
+	// invert and ajust size
+	wave = 1. - step(size*.5, wave);
+	
+	float blink = step(rand(TIME)*ratio, .5);
+	wave *= blink;
+	*/
+	
+	wave = clamp(wave, 0.0, 1.0);
+
+    // Make strikes blink on and off
+    float blink = step(rand(floor(time / strike_delay)) * ratio, 0.5);
+    wave *= blink;
+
+    // Create a radial gradient for the glow effect
+    float dist = distance(UV, vec2(0.5, 0.5));
+    float glow = smoothstep(0.0, glow_intensity, 1.0 - dist);
+
+	vec4 noise_mask = texture(noise, vec2(TIME, TIME));
+    vec4 display = lightning_color * vec4(wave);
+    display.rgb += glow * lightning_color.rgb * wave;
+	display *= noise_mask;
+	display *= gradient_shift_alt(display.r, gradient, shift_speed);
+	
+    COLOR = vec4(display.rgb, display.a * wave);
+	for(int i = 0; i < strike_count; i++){
+		if(UV.y < float(i/strike_count)){
+			COLOR *= vec4(0.0);
+		}
+	}
+}

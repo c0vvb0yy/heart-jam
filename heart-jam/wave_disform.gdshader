@@ -34,5 +34,5 @@ void fragment() {
 	vec4 ori = texture(SCREEN_TEXTURE, final_st);
 	COLOR = vec4(red.r, ori.g, blue.b, 1.0);
 	
-	COLOR = vec4(vec3(mask),1.0);
+	//COLOR = vec4(vec3(mask),1.0);
 }

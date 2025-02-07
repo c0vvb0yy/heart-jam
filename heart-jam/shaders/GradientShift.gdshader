@@ -1,10 +1,12 @@
 shader_type canvas_item;
+#include "constants.gdshaderinc"
 
 uniform sampler2D gradient: repeat_enable, filter_nearest;
 uniform float speed_scale = 1;
 
+uniform vec4 hue: source_color = vec4(1.,1.,1.,1.);
+
 void fragment() {
-	vec4 color = texture(TEXTURE, UV);
-	float x = color.r - TIME * speed_scale;
-	COLOR = vec4(texture(gradient, vec2(x, 0)).rgb, color.a);
+	COLOR = gradient_shift(texture(TEXTURE, UV), gradient,speed_scale);
+	COLOR *= hue;
 }

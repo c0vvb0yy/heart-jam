@@ -2,5 +2,6 @@
 
 [resource]
 font_names = PackedStringArray("SimSun", "Ebrima", "David CLM")
+hinting = 0
 subpixel_positioning = 0
-oversampling = 0.2
+oversampling = 0.7

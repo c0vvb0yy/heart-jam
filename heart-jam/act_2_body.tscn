@@ -1,0 +1,137 @@
+[gd_scene load_steps=23 format=3 uid="uid://dnf7tpcpi8cic"]
+
+[ext_resource type="Texture2D" uid="uid://fgm6ds3cdu6e" path="res://sprites/act2/head_happy.png" id="14_lkuc0"]
+[ext_resource type="Shader" path="res://shaders/earthbound.gdshader" id="15_jyw10"]
+[ext_resource type="Texture2D" uid="uid://bc1catjcunqtt" path="res://debug_sprites/act2_earthbound_bg.png" id="16_0o5m7"]
+[ext_resource type="Texture2D" uid="uid://duyq3t34smpf1" path="res://debug_sprites/gradient_smooth_pearl_sludged.png" id="17_bxned"]
+[ext_resource type="Texture2D" uid="uid://cqmrsdnm7kpap" path="res://debug_sprites/gradient_smooth_pearl_sludged_v2.png" id="20_oelca"]
+[ext_resource type="Shader" path="res://shaders/halo.gdshader" id="22_avcij"]
+[ext_resource type="Texture2D" uid="uid://c6gi7imytf370" path="res://icon.svg" id="23_mvd1v"]
+[ext_resource type="Shader" path="res://shaders/palette_cycle.gdshader" id="24_8yguf"]
+[ext_resource type="Texture2D" uid="uid://cht7nwysbi64e" path="res://sprites/act2/shine.png" id="25_kurr1"]
+[ext_resource type="Shader" path="res://shaders/iridescence.gdshader" id="26_uub84"]
+[ext_resource type="Texture2D" uid="uid://b6ishsqse5vm8" path="res://sprites/act2/aenthroppe.png" id="27_enb4y"]
+[ext_resource type="Texture2D" uid="uid://cjmde2hqdd7j8" path="res://debug_sprites/wall_base.png" id="28_kiu66"]
+[ext_resource type="Texture2D" uid="uid://c6wmmyawgkk60" path="res://debug_sprites/gradient_smooth_bronze.png" id="29_5ar8f"]
+[ext_resource type="Texture2D" uid="uid://blh5yh3xflfo3" path="res://debug_sprites/incandescent_topsurgery.png" id="30_3pryj"]
+[ext_resource type="Texture2D" uid="uid://xxvbr06uadiu" path="res://sprites/act2/head.png" id="31_6shmv"]
+[ext_resource type="Script" path="res://talk_animation.gd" id="32_vj4dc"]
+[ext_resource type="Material" uid="uid://8qvdn7lkdcyl" path="res://tears.tres" id="33_ufrv3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wdq7i"]
+shader = ExtResource("24_8yguf")
+shader_parameter/speed_scale = 0.07
+shader_parameter/gradient = ExtResource("20_oelca")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vg0dy"]
+shader = ExtResource("22_avcij")
+shader_parameter/spread = 0.47
+shader_parameter/cutoff = 0.635
+shader_parameter/size = 0.95
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 9.815
+shader_parameter/ray2_density = 19.94
+shader_parameter/ray2_intensity = 0.53
+shader_parameter/core_intensity = -2.955
+shader_parameter/hdr = false
+shader_parameter/seed = 10.05
+shader_parameter/gradient = ExtResource("17_bxned")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o4vt8"]
+shader = ExtResource("26_uub84")
+shader_parameter/noise_scale = 4.477
+shader_parameter/distortion_scale_x = 5.223
+shader_parameter/distortion_scale_y = 8.944
+shader_parameter/rainbow_intensity = 0.0
+shader_parameter/base_texture_degree = 0.916
+shader_parameter/sprite_scroll_direction = Vector2(0, 0)
+shader_parameter/sprite_scroll_speed = 3.888
+shader_parameter/progress = 1.0
+shader_parameter/debug = 0.297
+shader_parameter/iridescence_base = Color(0.563203, 0.206057, 0.314314, 1)
+shader_parameter/noise_texture = ExtResource("16_0o5m7")
+shader_parameter/horizontal_wave_amplitude = -0.1
+shader_parameter/horizontal_wave_frequency = 1.42
+shader_parameter/horizontal_wave_speed = 1.0
+shader_parameter/vertical_wave_amplitude = 0.06
+shader_parameter/vertical_wave_frequency = 6.115
+shader_parameter/vertical_wave_speed = 3.13
+shader_parameter/horizontal_deform_amplitude = 0.0
+shader_parameter/horizontal_deform_frequency = 0.635
+shader_parameter/horizontal_deform_speed = 1.0
+shader_parameter/vertical_deform_amplitude = -0.085
+shader_parameter/vertical_deform_frequency = 7.11
+shader_parameter/vertical_deform_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t60vg"]
+shader = ExtResource("15_jyw10")
+shader_parameter/snes_transparency = true
+shader_parameter/gba_transparency = true
+shader_parameter/vertex_deform = false
+shader_parameter/mix_base_texture = true
+shader_parameter/mix_degree = 0.3
+shader_parameter/_progress = 0.5
+shader_parameter/sprite_scroll_direction = Vector2(0, 0)
+shader_parameter/sprite_scroll_speed = 0.01
+shader_parameter/gba_transparency_scroll_direction = Vector2(0.41, 0.24)
+shader_parameter/gba_transparency_scroll_speed = 0.01
+shader_parameter/gba_transparency_value = 0.5
+shader_parameter/horizontal_wave_amplitude = 0.025
+shader_parameter/horizontal_wave_frequency = 25.775
+shader_parameter/horizontal_wave_speed = 0.065
+shader_parameter/vertical_wave_amplitude = 0.08
+shader_parameter/vertical_wave_frequency = 29.46
+shader_parameter/vertical_wave_speed = 0.165
+shader_parameter/horizontal_deform_amplitude = 0.0
+shader_parameter/horizontal_deform_frequency = 0.0
+shader_parameter/horizontal_deform_speed = 0.035
+shader_parameter/vertical_deform_amplitude = 0.0
+shader_parameter/vertical_deform_frequency = 0.0
+shader_parameter/vertical_deform_speed = 1.0
+shader_parameter/horizontal_scan_line = false
+shader_parameter/vertical_scan_line = false
+shader_parameter/width = 0.0
+shader_parameter/height = 0.0
+shader_parameter/enable_palette_cycling = true
+shader_parameter/palette_cycling_speed = 0.1
+shader_parameter/palette = ExtResource("29_5ar8f")
+shader_parameter/fractal = ExtResource("28_kiu66")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5af02"]
+
+[node name="Aenthroppe" type="Node2D"]
+rotation = -3.21119e-05
+
+[node name="Shine" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+material = SubResource("ShaderMaterial_wdq7i")
+texture = ExtResource("25_kurr1")
+
+[node name="Halo" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_vg0dy")
+position = Vector2(-107.99, -309.003)
+rotation = -0.00433274
+scale = Vector2(7.69336, 7.08008)
+texture = ExtResource("23_mvd1v")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_o4vt8")
+texture = ExtResource("27_enb4y")
+
+[node name="IncandescentTopsurgery" type="Sprite2D" parent="Sprite"]
+texture_repeat = 3
+material = SubResource("ShaderMaterial_t60vg")
+position = Vector2(-22, 78)
+texture = ExtResource("30_3pryj")
+
+[node name="Head" type="Sprite2D" parent="Sprite"]
+visible = false
+material = SubResource("ShaderMaterial_5af02")
+position = Vector2(-96, -275)
+texture = ExtResource("14_lkuc0")
+
+[node name="Tears" type="Sprite2D" parent="Sprite"]
+material = ExtResource("33_ufrv3")
+position = Vector2(-96, -275)
+texture = ExtResource("31_6shmv")
+script = ExtResource("32_vj4dc")

@@ -11,10 +11,10 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_okw44"]
 shader = ExtResource("1_hhoig")
-shader_parameter/strength = 10.1
-shader_parameter/center = Vector2(0.5, 1)
-shader_parameter/radius = 0.0694193
-shader_parameter/debug = 13.0
+shader_parameter/strength = 0.098
+shader_parameter/center = Vector2(0.46, 1)
+shader_parameter/radius = 0.0911952
+shader_parameter/debug = 10.3
 shader_parameter/deb = 14.1
 shader_parameter/aberration = 0.578
 shader_parameter/width = 0.1
@@ -24,8 +24,8 @@ shader_parameter/feather = 0.161
 shader = ExtResource("1_kd05q")
 shader_parameter/aurora_scroll_speed = 0.0
 shader_parameter/color_scroll_speed = 0.5
-shader_parameter/curve_horizontal_repition = 1.0
-shader_parameter/glow_strength = 2.94
+shader_parameter/curve_horizontal_repition = 6.7793
+shader_parameter/glow_strength = 2.7696
 shader_parameter/debug = 0.0
 shader_parameter/base_white_size = 1.5
 shader_parameter/tint = Color(0.929819, 0.648817, 0.568599, 1)
@@ -33,20 +33,24 @@ shader_parameter/lower_transparency_mask = ExtResource("2_71vdl")
 shader_parameter/gradient_base = ExtResource("2_h0xuj")
 shader_parameter/gradient_tint = ExtResource("3_d1bo6")
 shader_parameter/heart_mask = ExtResource("4_dgjh6")
-shader_parameter/sway_strength = 0.0
+shader_parameter/sway_strength = 1.2
 shader_parameter/sway_phase_len = 1.2
 shader_parameter/sway_speed = 1.2
 
-[node name="Node2D" type="Node2D"]
+[node name="Heart" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1605.0
+offset_bottom = 1211.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_okw44")
 offset_right = 1024.0
 offset_bottom = 1025.0
-script = ExtResource("2_ruhnq")
-speed = 0.33
 
 [node name="Aurora" type="Sprite2D" parent="."]
 texture_repeat = 3
@@ -54,6 +58,8 @@ material = SubResource("ShaderMaterial_iwhh5")
 position = Vector2(514, 513)
 texture = ExtResource("2_bsvrh")
 region_rect = Rect2(1024, 1024, 2048, 1024)
+script = ExtResource("2_ruhnq")
+speed = 14.445
 
 [node name="Camera2D" type="Camera2D" parent="."]
 visible = false

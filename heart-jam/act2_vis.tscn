@@ -292,6 +292,7 @@ position = Vector2(-22, 349)
 texture = ExtResource("21_n0v13")
 
 [node name="Halo" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_vg0dy")
 position = Vector2(751.625, 442.875)
 rotation = -0.00433274
@@ -306,6 +307,7 @@ position = Vector2(847, 745)
 texture = ExtResource("25_2pwvc")
 
 [node name="Aenthroppe" type="Sprite2D" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_o4vt8")
 position = Vector2(847, 745)
 texture = ExtResource("27_tyynh")
@@ -328,6 +330,7 @@ position = Vector2(-96, -275)
 texture = ExtResource("31_e4t2r")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 material = SubResource("ShaderMaterial_usbf1")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://ct81jhg6e6qvx"]
+[gd_scene load_steps=38 format=3 uid="uid://ct81jhg6e6qvx"]
 
 [ext_resource type="Shader" path="res://shaders/palette_cycle.gdshader" id="1_vjes1"]
+[ext_resource type="Texture2D" uid="uid://duyq3t34smpf1" path="res://debug_sprites/gradient_smooth_pearl_sludged.png" id="2_13m6b"]
 [ext_resource type="Texture2D" uid="uid://co7s6813pofhw" path="res://gradients/gradient_smooth_pearl.png" id="2_q1y13"]
 [ext_resource type="Texture2D" uid="uid://oetbl7jpl75w" path="res://sprites/alternating_chaos.png" id="3_sym03"]
 [ext_resource type="Texture2D" uid="uid://mr808g5nb7r6" path="res://sprites/chaotic_creation.png" id="4_5k4h2"]
@@ -16,11 +17,17 @@
 [ext_resource type="Shader" path="res://shaders/fractal_test.gdshader" id="14_c5m0o"]
 [ext_resource type="Texture2D" uid="uid://c6wmmyawgkk60" path="res://debug_sprites/gradient_smooth_bronze.png" id="15_cfwuy"]
 [ext_resource type="Texture2D" uid="uid://blh5yh3xflfo3" path="res://debug_sprites/incandescent_topsurgery.png" id="16_e57jg"]
+[ext_resource type="SystemFont" uid="uid://b8hy7o52yr4s1" path="res://simsun_font.tres" id="18_pakxh"]
+[ext_resource type="Script" path="res://scripts/bbcode/cycle.gd" id="19_0osfx"]
+[ext_resource type="Script" path="res://scripts/bbcode/glitchText.gd" id="20_ukohg"]
+[ext_resource type="Script" path="res://scripts/bbcode/iridescence.gd" id="21_a7iat"]
+[ext_resource type="Script" path="res://scripts/bbcode/jiggle.gd" id="22_wojsl"]
+[ext_resource type="Script" path="res://scripts/bbcode/replacer.gd" id="23_ulkey"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fkch2"]
 shader = ExtResource("1_vjes1")
-shader_parameter/speed_scale = 0.07
-shader_parameter/gradient = ExtResource("2_q1y13")
+shader_parameter/speed_scale = 0.525
+shader_parameter/gradient = ExtResource("2_13m6b")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_01xnp"]
 shader = ExtResource("5_lwi52")
@@ -127,9 +134,33 @@ shader_parameter/palette_cycling_speed = 0.1
 shader_parameter/palette = ExtResource("15_cfwuy")
 shader_parameter/fractal = ExtResource("7_tmqm1")
 
+[sub_resource type="Theme" id="Theme_xtiyn"]
+default_font = ExtResource("18_pakxh")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ef851"]
+script = ExtResource("19_0osfx")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ll4jg"]
+script = ExtResource("20_ukohg")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_54tiu"]
+script = ExtResource("21_a7iat")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_4xwcx"]
+script = ExtResource("22_wojsl")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_pup2u"]
+script = ExtResource("23_ulkey")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="AlternatingChaos" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_fkch2")
+position = Vector2(4262, 1385)
+scale = Vector2(0.894444, 1.03438)
+texture = ExtResource("3_sym03")
+
+[node name="AlternatingChaos2" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_fkch2")
 position = Vector2(4262, 1385)
 scale = Vector2(0.894444, 1.03438)
@@ -212,3 +243,13 @@ texture_repeat = 3
 material = SubResource("ShaderMaterial_kpjqe")
 position = Vector2(-2832, 2486)
 texture = ExtResource("16_e57jg")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 1181.0
+offset_bottom = 520.0
+theme = SubResource("Theme_xtiyn")
+theme_override_font_sizes/normal_font_size = 41
+bbcode_enabled = true
+text = "[jiggle]asdfghjklö[/jiggle]
+[glitch]sphynx[glitch] of black quartz, judge my vow"
+custom_effects = [SubResource("RichTextEffect_ef851"), SubResource("RichTextEffect_ll4jg"), SubResource("RichTextEffect_54tiu"), SubResource("RichTextEffect_4xwcx"), SubResource("RichTextEffect_pup2u")]
