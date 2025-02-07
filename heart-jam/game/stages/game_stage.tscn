@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://r1ntcqdujfol"]
+[gd_scene load_steps=61 format=3 uid="uid://r1ntcqdujfol"]
 
 [ext_resource type="Script" path="res://game/stages/game_stage.gd" id="1_a36me"]
 [ext_resource type="Script" path="res://addons/diisis/parser/src/line_reader.gd" id="1_h4afo"]
@@ -91,27 +91,11 @@ script = ExtResource("17_7wkwp")
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tba1"]
 bg_color = Color(0.05, 0.05, 0.05, 0.756863)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_scr08"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hyf4o"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkxqd"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8b7br"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngewe"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s5n3v"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qrqx2"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6in5e"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5poes"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gq6j1"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p2i0s"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p17qu"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6jtk0"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tscwj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_orud1"]
 
@@ -167,7 +151,6 @@ script = ExtResource("3_x2eff")
 position = Vector2(808, 542)
 
 [node name="Aenthroppe" parent="Characters" instance=ExtResource("4_5aytx")]
-visible = false
 position = Vector2(841, 709)
 script = ExtResource("5_1ivoq")
 
@@ -530,21 +513,12 @@ grow_vertical = 0
 
 [node name="HistoryButton" type="Button" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI/ControlsContainer"]
 layout_mode = 2
-theme_override_colors/font_outline_color = Color(0.909804, 0.741176, 0.772549, 0.286275)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme = ExtResource("11_e7eyg")
+theme_override_colors/font_outline_color = Color(0.6039, 0.99, 0.957825, 0.392157)
 theme_override_constants/outline_size = 10
-theme_override_font_sizes/font_size = 18
-theme_override_styles/focus = SubResource("StyleBoxEmpty_scr08")
-theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_hkxqd")
-theme_override_styles/disabled = SubResource("StyleBoxEmpty_ngewe")
-theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_s5n3v")
-theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_qrqx2")
-theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_6in5e")
-theme_override_styles/hover = SubResource("StyleBoxEmpty_5poes")
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_gq6j1")
-theme_override_styles/pressed = SubResource("StyleBoxEmpty_p2i0s")
-theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_p17qu")
-theme_override_styles/normal = SubResource("StyleBoxEmpty_6jtk0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hyf4o")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_8b7br")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_tscwj")
 text = "History"
 
 [node name="MenuButton" type="Button" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI/ControlsContainer"]
@@ -604,29 +578,29 @@ layout_mode = 1
 
 [node name="PageUnfinished1" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
 layout_mode = 0
-offset_left = 1060.0
-offset_top = 1127.0
-offset_right = 1092.0
-offset_bottom = 1159.0
-rotation = 3.4891
+offset_left = 1100.0
+offset_top = 1128.0
+offset_right = 1132.0
+offset_bottom = 1160.0
+rotation = 5.86773
 
 [node name="PageUnfinished2" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
 visible = false
 layout_mode = 0
-offset_left = 264.0
-offset_top = 717.0
-offset_right = 280.0
-offset_bottom = 749.0
-rotation = 3.4891
+offset_left = 295.0
+offset_top = 722.0
+offset_right = 327.0
+offset_bottom = 754.0
+rotation = 5.86773
 
 [node name="PageUnfinished3" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
 visible = false
 layout_mode = 0
-offset_left = 1524.0
-offset_top = 704.0
-offset_right = 1540.0
-offset_bottom = 736.0
-rotation = 3.4891
+offset_left = 1546.0
+offset_top = 712.0
+offset_right = 1578.0
+offset_bottom = 744.0
+rotation = 5.86773
 
 [node name="PageFinished1" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
 material = SubResource("ShaderMaterial_oyajn")
@@ -636,9 +610,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1100.0
+offset_left = 1098.85
 offset_top = 1127.0
-offset_right = 1132.0
+offset_right = 1130.85
 offset_bottom = 1159.0
 grow_horizontal = 1
 grow_vertical = 1
@@ -647,17 +621,17 @@ bop_length = 5
 [node name="PageFinished2" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
 visible = false
 layout_mode = 1
-offset_left = -1302.0
+offset_left = -1304.3
 offset_top = -478.0
-offset_right = -1270.0
+offset_right = -1272.3
 offset_bottom = -446.0
 
 [node name="PageFinished3" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
 visible = false
 layout_mode = 1
-offset_left = -46.0
+offset_left = -48.2957
 offset_top = -489.0
-offset_right = -14.0
+offset_right = -16.2957
 offset_bottom = -457.0
 
 [node name="StartCover" type="ColorRect" parent="Camera2D/CanvasLayer"]

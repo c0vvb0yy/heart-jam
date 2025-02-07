@@ -41,8 +41,8 @@ noise = SubResource("FastNoiseLite_qjg1s")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0g37g"]
 shader = ExtResource("9_1r2ho")
-shader_parameter/lightning_color = Color(1, 1, 1, 1)
-shader_parameter/size = 0.1
+shader_parameter/lightning_color = Color(1, 0, 0, 1)
+shader_parameter/size = 0.0
 shader_parameter/width = 0.429
 shader_parameter/speed = 1.355
 shader_parameter/cycle = 0.545
@@ -196,9 +196,15 @@ scale = Vector2(-1, 1.038)
 texture = ExtResource("8_xnja7")
 
 [node name="Cracks" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_0g37g")
 position = Vector2(785, 498)
 rotation = 1.04428
+scale = Vector2(6.22697, 6.60752)
+texture = ExtResource("10_liqe6")
+
+[node name="Cracks2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0g37g")
+position = Vector2(785, 498)
+rotation = -0.426648
 scale = Vector2(6.22697, 6.60752)
 texture = ExtResource("10_liqe6")

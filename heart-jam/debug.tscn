@@ -250,6 +250,6 @@ offset_bottom = 520.0
 theme = SubResource("Theme_xtiyn")
 theme_override_font_sizes/normal_font_size = 41
 bbcode_enabled = true
-text = "[jiggle]asdfghjklö[/jiggle]
+text = "[jiggle h=10 v=7]asdfghjklö[/jiggle]
 [glitch]sphynx[/glitch] of black quartz, judge my vow"
 custom_effects = [SubResource("RichTextEffect_ef851"), SubResource("RichTextEffect_ll4jg"), SubResource("RichTextEffect_54tiu"), SubResource("RichTextEffect_4xwcx"), SubResource("RichTextEffect_pup2u")]

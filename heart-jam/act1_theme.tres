@@ -5,12 +5,12 @@
 [ext_resource type="SystemFont" uid="uid://b8hy7o52yr4s1" path="res://simsun_font.tres" id="3_8lejc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vbry8"]
-bg_color = Color(0.949884, 0.955361, 0.976361, 0.87451)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0.24, 0.012, 0.0461999, 0.172549)
+bg_color = Color(0.396078, 0.370759, 0.374811, 0.87451)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.364596, 0.00466099, 0.190695, 0.815686)
 border_blend = true
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -61,10 +61,12 @@ oversampling = 0.7
 [resource]
 default_font = ExtResource("3_8lejc")
 Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 0.976471)
 Button/colors/font_hover_color = Color(0.217328, 0.2284, 0.0242789, 1)
 Button/colors/font_hover_pressed_color = Color(0.572485, 0.598021, 0.112714, 1)
-Button/colors/font_outline_color = Color(0.153777, 0.174059, 0.926266, 1)
 Button/colors/font_pressed_color = Color(0.981951, 0.761747, 0.774874, 1)
+Button/constants/outline_size = 1
+Button/font_sizes/font_size = 20
 Button/styles/disabled = SubResource("StyleBoxFlat_vbry8")
 Button/styles/hover = SubResource("StyleBoxFlat_2ft2e")
 Button/styles/normal = ExtResource("1_11irl")
