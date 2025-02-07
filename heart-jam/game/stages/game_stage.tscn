@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://r1ntcqdujfol"]
+[gd_scene load_steps=69 format=3 uid="uid://r1ntcqdujfol"]
 
 [ext_resource type="Script" path="res://game/stages/game_stage.gd" id="1_a36me"]
 [ext_resource type="Script" path="res://addons/diisis/parser/src/line_reader.gd" id="1_h4afo"]
@@ -29,6 +29,8 @@
 [ext_resource type="PackedScene" uid="uid://ipa310726xyt" path="res://game/stages/rolling_credits.tscn" id="17_gnute"]
 [ext_resource type="PackedScene" uid="uid://dqebnrtcorgt4" path="res://page_unfinished.tscn" id="25_x4gx6"]
 [ext_resource type="PackedScene" uid="uid://df8dpjd818vfd" path="res://page_finished.tscn" id="26_8bet6"]
+[ext_resource type="Shader" path="res://iridescence_base.gdshader" id="26_l5mly"]
+[ext_resource type="Texture2D" uid="uid://cjmde2hqdd7j8" path="res://debug_sprites/wall_base.png" id="27_j1qrb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ca2q"]
 resource_local_to_scene = true
@@ -55,6 +57,21 @@ shader_parameter/fill_amount = -1.0
 shader_parameter/epsilon = 1e-10
 shader_parameter/noise = ExtResource("8_6l6o8")
 shader_parameter/mask = ExtResource("8_mxu8l")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_l6nh1"]
+script = ExtResource("13_7esux")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_0wa18"]
+script = ExtResource("14_17383")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5klxg"]
+script = ExtResource("15_rxhrr")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_lyc7y"]
+script = ExtResource("16_0lk4r")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_hiokn"]
+script = ExtResource("17_7wkwp")
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_3olxo"]
 script = ExtResource("13_7esux")
@@ -122,6 +139,14 @@ bg_color = Color(0.05, 0.05, 0.05, 0.756863)
 shader = ExtResource("17_dc0ef")
 shader_parameter/intensity = 0.0
 shader_parameter/border_size = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oyajn"]
+shader = ExtResource("26_l5mly")
+shader_parameter/noise_scale = 6.502
+shader_parameter/distortion_scale_x = 0.0
+shader_parameter/distortion_scale_y = 0.0
+shader_parameter/rainbow_intensity = 0.387
+shader_parameter/noise_texture = ExtResource("27_j1qrb")
 
 [node name="GameStage" type="Control"]
 layout_mode = 3
@@ -285,6 +310,7 @@ bbcode_enabled = true
 text = "Ænthroppe"
 fit_content = true
 scroll_active = false
+custom_effects = [SubResource("RichTextEffect_l6nh1"), SubResource("RichTextEffect_0wa18"), SubResource("RichTextEffect_5klxg"), SubResource("RichTextEffect_lyc7y"), SubResource("RichTextEffect_hiokn")]
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
@@ -578,51 +604,60 @@ layout_mode = 1
 
 [node name="PageUnfinished1" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
 layout_mode = 0
-offset_left = 1067.0
-offset_top = 1132.0
-offset_right = 1083.0
-offset_bottom = 1164.0
+offset_left = 1060.0
+offset_top = 1127.0
+offset_right = 1092.0
+offset_bottom = 1159.0
+rotation = 3.4891
 
 [node name="PageUnfinished2" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
+visible = false
 layout_mode = 0
 offset_left = 264.0
 offset_top = 717.0
 offset_right = 280.0
 offset_bottom = 749.0
+rotation = 3.4891
 
 [node name="PageUnfinished3" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
+visible = false
 layout_mode = 0
 offset_left = 1524.0
 offset_top = 704.0
 offset_right = 1540.0
 offset_bottom = 736.0
+rotation = 3.4891
 
 [node name="PageFinished1" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
+material = SubResource("ShaderMaterial_oyajn")
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1097.0
+offset_left = 1100.0
 offset_top = 1127.0
-offset_right = 1129.0
+offset_right = 1132.0
 offset_bottom = 1159.0
 grow_horizontal = 1
 grow_vertical = 1
+bop_length = 5
 
 [node name="PageFinished2" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
+visible = false
 layout_mode = 1
-offset_left = -1312.0
+offset_left = -1302.0
 offset_top = -478.0
-offset_right = -1280.0
+offset_right = -1270.0
 offset_bottom = -446.0
 
 [node name="PageFinished3" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
+visible = false
 layout_mode = 1
-offset_left = -56.0
+offset_left = -46.0
 offset_top = -489.0
-offset_right = -24.0
+offset_right = -14.0
 offset_bottom = -457.0
 
 [node name="StartCover" type="ColorRect" parent="Camera2D/CanvasLayer"]
@@ -673,7 +708,8 @@ name_container = NodePath("../Camera2D/CanvasLayer/VNUIRoot/VNUI/TextContainer1/
 instruction_handler = NodePath("../InstructionHandler")
 inline_evaluator = NodePath("../InstructionHandler")
 show_input_prompt = true
-input_prompt_delay = 0.786
+input_prompt_delay = 0.21
+input_prompt_lerp_weight = 0.079
 prompt_unfinished = NodePath("../Camera2D/CanvasLayer/VNUIRoot/PageUnfinished1")
 prompt_finished = NodePath("../Camera2D/CanvasLayer/VNUIRoot/PageFinished1")
 

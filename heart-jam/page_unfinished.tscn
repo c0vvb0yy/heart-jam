@@ -1,13 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqebnrtcorgt4"]
+[gd_scene load_steps=6 format=3 uid="uid://dqebnrtcorgt4"]
 
-[ext_resource type="Texture2D" uid="uid://delwppkladi0u" path="res://addons/diisis/editor/visuals/more.svg" id="1_aidi5"]
+[ext_resource type="Shader" path="res://iridescence_base.gdshader" id="1_17sg4"]
+[ext_resource type="Texture2D" uid="uid://b6nyw8bpksgfw" path="res://page_unfinished.png" id="1_t1sti"]
+[ext_resource type="Texture2D" uid="uid://d1kifbt610ylb" path="res://gradients/gradient_vignette.png" id="2_1iitw"]
+[ext_resource type="Script" path="res://page_unfinished.gd" id="2_bh3gu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4mdr"]
+shader = ExtResource("1_17sg4")
+shader_parameter/noise_scale = 1.068
+shader_parameter/distortion_scale_x = 0.301
+shader_parameter/distortion_scale_y = 0.18
+shader_parameter/rainbow_intensity = 0.251
+shader_parameter/noise_texture = ExtResource("2_1iitw")
 
 [node name="PageUnfinished1" type="TextureRect"]
-offset_left = 1074.0
-offset_top = 1129.0
-offset_right = 1090.0
-offset_bottom = 1161.0
+material = SubResource("ShaderMaterial_s4mdr")
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+rotation = 0.51698
+pivot_offset = Vector2(16, 16)
 size_flags_horizontal = 0
 mouse_filter = 2
-texture = ExtResource("1_aidi5")
+texture = ExtResource("1_t1sti")
 stretch_mode = 2
+script = ExtResource("2_bh3gu")
+speed = 25
