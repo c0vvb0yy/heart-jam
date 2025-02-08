@@ -1,6 +1,8 @@
 extends Control
 class_name GameStage
 
+@export var theme_1 : Resource
+@export var theme_2 : Resource
 @onready var characters := {}
 
 enum TextStyle {
@@ -449,7 +451,11 @@ func use_ui(id:int):
 	lr.text_container = ui_root
 	lr.name_label = ui_root.find_child("Label")
 	lr.name_container = ui_root.find_child("PanelContainer")
+	if(lr.prompt_finished != null):
+		lr.prompt_finished.visible = false
 	lr.prompt_finished = vn_ui_root.find_child(str("PageFinished", ui_id))
+	if(lr.prompt_unfinished != null):
+		lr.prompt_unfinished.visible = false
 	lr.prompt_unfinished = vn_ui_root.find_child(str("PageUnfinished", ui_id))
 	
 	if root_existed:
@@ -480,3 +486,9 @@ func _on_rich_text_label_meta_hover_ended(_meta: Variant) -> void:
 func _on_rich_text_label_meta_hover_started(_meta: Variant) -> void:
 	hovering_meta = true
 
+func _on_instruction_handler_change_theme(index: int):
+	if(index == 1):
+		self.theme = theme_1
+	else:
+		self.theme = theme_2
+	pass # Replace with function body.

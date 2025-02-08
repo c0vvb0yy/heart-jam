@@ -42,6 +42,7 @@ window/stretch/mode="canvas_items"
 [editor]
 
 movie_writer/movie_file="C:/Users/jamis/programming/heart-jam-git/heart-jam/movies/recordings.avi"
+movie_writer/fps=30
 
 [editor_plugins]
 

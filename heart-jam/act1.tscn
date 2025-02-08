@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b2pur65roeh47"]
+[gd_scene load_steps=4 format=3 uid="uid://b2pur65roeh47"]
 
 [ext_resource type="PackedScene" uid="uid://bgx7pdorocdvv" path="res://atc1_vis.tscn" id="1_y8l71"]
+[ext_resource type="PackedScene" uid="uid://c7yocfpmv2kiy" path="res://act_1_body.tscn" id="2_snyuh"]
 [ext_resource type="SystemFont" uid="uid://b8hy7o52yr4s1" path="res://simsun_font.tres" id="16_4gu8h"]
 
 [node name="UI" type="Control"]
@@ -13,7 +14,11 @@ grow_vertical = 2
 
 [node name="Visuals" parent="." instance=ExtResource("1_y8l71")]
 
+[node name="Aether" parent="Visuals" instance=ExtResource("2_snyuh")]
+position = Vector2(811, 602)
+
 [node name="TextContainer" type="CenterContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -52,6 +57,7 @@ bbcode_enabled = true
 text = "TextBody here :^))))))))))))))))"
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 206.0
 offset_top = 99.0

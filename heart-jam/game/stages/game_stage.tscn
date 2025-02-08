@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://r1ntcqdujfol"]
+[gd_scene load_steps=73 format=3 uid="uid://r1ntcqdujfol"]
 
 [ext_resource type="Script" path="res://game/stages/game_stage.gd" id="1_a36me"]
 [ext_resource type="Script" path="res://addons/diisis/parser/src/line_reader.gd" id="1_h4afo"]
@@ -88,6 +88,36 @@ script = ExtResource("16_0lk4r")
 [sub_resource type="RichTextEffect" id="RichTextEffect_hxqh4"]
 script = ExtResource("17_7wkwp")
 
+[sub_resource type="RichTextEffect" id="RichTextEffect_uic7a"]
+script = ExtResource("13_7esux")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_y1kjp"]
+script = ExtResource("14_17383")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_lfmb6"]
+script = ExtResource("15_rxhrr")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_kw62m"]
+script = ExtResource("16_0lk4r")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_g06xr"]
+script = ExtResource("17_7wkwp")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_5x8ii"]
+script = ExtResource("13_7esux")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_14fsk"]
+script = ExtResource("14_17383")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_ugp1s"]
+script = ExtResource("15_rxhrr")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_11ld5"]
+script = ExtResource("16_0lk4r")
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_fxqdh"]
+script = ExtResource("17_7wkwp")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5tba1"]
 bg_color = Color(0.05, 0.05, 0.05, 0.756863)
 
@@ -132,6 +162,10 @@ shader_parameter/distortion_scale_y = 0.0
 shader_parameter/rainbow_intensity = 0.387
 shader_parameter/noise_texture = ExtResource("27_j1qrb")
 
+[sub_resource type="ImageTexture" id="ImageTexture_0dnj5"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_pfq1d"]
+
 [node name="GameStage" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -141,6 +175,8 @@ grow_horizontal = 2
 grow_vertical = 2
 focus_mode = 2
 script = ExtResource("1_a36me")
+theme_1 = ExtResource("11_e7eyg")
+theme_2 = ExtResource("11_v0gyp")
 
 [node name="Objects" type="Node2D" parent="."]
 script = ExtResource("3_x2eff")
@@ -171,7 +207,6 @@ mouse_filter = 2
 
 [node name="CGBottomContainer" type="Control" parent="Camera2D/CanvasLayer2/Control"]
 auto_translate_mode = 1
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -369,10 +404,20 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 7
 theme_override_constants/margin_bottom = 1
 
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI/TextContainer2/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="Label" type="RichTextLabel" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI/TextContainer2/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 auto_translate_mode = 1
+clip_contents = false
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Name Label Here"
+mouse_filter = 1
+theme = ExtResource("11_v0gyp")
+bbcode_enabled = true
+text = "Ænthroppe"
+fit_content = true
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_l6nh1"), SubResource("RichTextEffect_0wa18"), SubResource("RichTextEffect_5klxg"), SubResource("RichTextEffect_lyc7y"), SubResource("RichTextEffect_hiokn")]
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="MarginContainer2" type="MarginContainer" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI/TextContainer2/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -403,6 +448,7 @@ text = "Text Body Here
 dghfgh"
 fit_content = true
 scroll_active = false
+custom_effects = [SubResource("RichTextEffect_uic7a"), SubResource("RichTextEffect_y1kjp"), SubResource("RichTextEffect_lfmb6"), SubResource("RichTextEffect_kw62m"), SubResource("RichTextEffect_g06xr")]
 
 [node name="TextContainer3" type="CenterContainer" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI"]
 auto_translate_mode = 1
@@ -448,10 +494,20 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 7
 theme_override_constants/margin_bottom = 1
 
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI/TextContainer3/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
+[node name="Label" type="RichTextLabel" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI/TextContainer3/MarginContainer/VBoxContainer/PanelContainer/MarginContainer"]
 auto_translate_mode = 1
+clip_contents = false
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
-text = "Name Label Here"
+mouse_filter = 1
+theme = ExtResource("11_v0gyp")
+bbcode_enabled = true
+text = "Ænthroppe"
+fit_content = true
+scroll_active = false
+custom_effects = [SubResource("RichTextEffect_l6nh1"), SubResource("RichTextEffect_0wa18"), SubResource("RichTextEffect_5klxg"), SubResource("RichTextEffect_lyc7y"), SubResource("RichTextEffect_hiokn")]
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="MarginContainer2" type="MarginContainer" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI/TextContainer3/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -482,6 +538,7 @@ text = "Text Body Here
 dghfgh"
 fit_content = true
 scroll_active = false
+custom_effects = [SubResource("RichTextEffect_5x8ii"), SubResource("RichTextEffect_14fsk"), SubResource("RichTextEffect_ugp1s"), SubResource("RichTextEffect_11ld5"), SubResource("RichTextEffect_fxqdh")]
 
 [node name="ChoiceContainer" type="PanelContainer" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI"]
 auto_translate_mode = 1
@@ -582,7 +639,7 @@ offset_left = 1100.0
 offset_top = 1128.0
 offset_right = 1132.0
 offset_bottom = 1160.0
-rotation = 5.86773
+rotation = 3.77622
 
 [node name="PageUnfinished2" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
 visible = false
@@ -591,7 +648,7 @@ offset_left = 295.0
 offset_top = 722.0
 offset_right = 327.0
 offset_bottom = 754.0
-rotation = 5.86773
+rotation = 3.77622
 
 [node name="PageUnfinished3" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
 visible = false
@@ -600,7 +657,7 @@ offset_left = 1546.0
 offset_top = 712.0
 offset_right = 1578.0
 offset_bottom = 744.0
-rotation = 5.86773
+rotation = 3.77622
 
 [node name="PageFinished1" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
 material = SubResource("ShaderMaterial_oyajn")
@@ -610,9 +667,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1098.85
+offset_left = 1105.21
 offset_top = 1127.0
-offset_right = 1130.85
+offset_right = 1137.21
 offset_bottom = 1159.0
 grow_horizontal = 1
 grow_vertical = 1
@@ -621,18 +678,20 @@ bop_length = 5
 [node name="PageFinished2" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
 visible = false
 layout_mode = 1
-offset_left = -1304.3
+offset_left = -1291.58
 offset_top = -478.0
-offset_right = -1272.3
+offset_right = -1259.58
 offset_bottom = -446.0
+texture = SubResource("ImageTexture_0dnj5")
 
 [node name="PageFinished3" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
 visible = false
 layout_mode = 1
-offset_left = -48.2957
+offset_left = -35.5807
 offset_top = -489.0
-offset_right = -16.2957
+offset_right = -3.58069
 offset_bottom = -457.0
+texture = SubResource("ImageTexture_pfq1d")
 
 [node name="StartCover" type="ColorRect" parent="Camera2D/CanvasLayer"]
 visible = false
@@ -668,6 +727,7 @@ auto_pause_duration = 1.2
 property_for_name = "speaker"
 name_map = {
 "???": "???",
+"aenthroppe": "Ænthroppe",
 "aether": "Æther",
 "amber": "Amber",
 "anthroppe": "Ænthroppe",
@@ -707,7 +767,10 @@ script = ExtResource("6_8ao3j")
 [connection signal="mouse_entered" from="Camera2D/CanvasLayer/VNUIRoot/VNUI/ControlsContainer/MenuButton" to="." method="increment_advance_blocker"]
 [connection signal="mouse_exited" from="Camera2D/CanvasLayer/VNUIRoot/VNUI/ControlsContainer/MenuButton" to="." method="decrement_advance_blocker"]
 [connection signal="pressed" from="Camera2D/CanvasLayer/VNUIRoot/VNUI/ControlsContainer/MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="change_theme" from="InstructionHandler" to="." method="_on_instruction_handler_change_theme"]
+[connection signal="character_talking" from="InstructionHandler" to="Characters/Aenthroppe" method="_on_instruction_handler_character_talking"]
 [connection signal="fade_character" from="InstructionHandler" to="Characters/Aether" method="_on_instruction_handler_fade_character"]
+[connection signal="fade_character" from="InstructionHandler" to="Characters/Aenthroppe" method="_on_instruction_handler_fade_character"]
 [connection signal="request_object_visible" from="InstructionHandler" to="Objects" method="set_object_visible"]
 [connection signal="splatter" from="InstructionHandler" to="." method="_on_instruction_handler_splatter"]
 [connection signal="start_black_fade" from="InstructionHandler" to="Camera2D/CanvasLayer/VNUIRoot/BlackFade" method="_on_handler_start_black_fade"]

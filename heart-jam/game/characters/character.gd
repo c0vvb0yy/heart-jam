@@ -91,3 +91,10 @@ func _on_instruction_handler_fade_character(character_name, fade_duration):
 	if modulate.a >= 0.1:
 		modulate.a = 0
 	fade_in(fade_duration)
+
+
+func _on_instruction_handler_character_talking(active):
+	if self.name != "Aenthroppe":
+		return
+	$Sprite/Tears.is_talking = active
+	pass # Replace with function body.

@@ -20,6 +20,7 @@ signal splatter(amount:int)
 signal start_chapter_cover(pov_name:String)
 signal request_object_visible(object_name:String, visibility:bool)
 signal fade_character(character_name:String, fade_duration:float)
+signal character_talking(active:bool)
 
 signal sun(property:String, value:float)
 
@@ -258,4 +259,23 @@ func set_text_speed(value) -> bool:
 	# (Needs to be called by your code from somewhere.)
 	# (The most direct approach is Parser.line_reader.instruction_handler.instruction_completed.emit().)
 	line_reader.text_speed = value
+	return false
+
+func talking(active:String) -> bool:
+	var boolean: bool
+	if active.begins_with("t"): 
+		boolean = true 
+	else: 
+		boolean = false
+	emit_signal("character_talking", boolean)
+	return false
+
+signal change_theme
+
+func use_theme(index) -> bool:
+	index = int(index)
+	# Return true if you want the LineReader to wait until its InstructionHandler has emitted instruction_completed.
+	# (Needs to be called by your code from somewhere.)
+	# (The most direct approach is Parser.line_reader.instruction_handler.instruction_completed.emit().)
+	emit_signal("change_theme", index)
 	return false

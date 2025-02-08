@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3u3nrek114bl"]
+[gd_scene load_steps=16 format=3 uid="uid://b3u3nrek114bl"]
 
 [ext_resource type="Theme" uid="uid://dd3wmvu0xxyhs" path="res://game/visuals/theme/theme.tres" id="1_5gfyt"]
 [ext_resource type="Script" path="res://game/stages/main_menu_stage.gd" id="1_wqqgh"]
@@ -9,6 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://cjmde2hqdd7j8" path="res://debug_sprites/wall_base.png" id="5_t5ch7"]
 [ext_resource type="PackedScene" uid="uid://crctahejpqbp1" path="res://aurora.tscn" id="7_cq0up"]
 [ext_resource type="SystemFont" uid="uid://b8hy7o52yr4s1" path="res://simsun_font.tres" id="7_ltl7a"]
+[ext_resource type="Texture2D" uid="uid://c22grjrbbmwey" path="res://sprites/title_2.png" id="8_2vhse"]
+[ext_resource type="Texture2D" uid="uid://bw4pk22r46p16" path="res://sprites/title_2_connectivity.png" id="9_em06g"]
+[ext_resource type="Theme" uid="uid://cvc01ny06grdj" path="res://base_theme.tres" id="10_k1jol"]
+[ext_resource type="Texture2D" uid="uid://ungnn6glje6k" path="res://sprites/title_1.png" id="11_85e0a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lg6m0"]
 shader = ExtResource("3_13j5x")
@@ -49,6 +53,7 @@ offset_bottom = 540.0
 texture = ExtResource("3_q1aoy")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_left = 166.0
@@ -62,11 +67,27 @@ text = "inspite of you
 "
 fit_content = true
 
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_left = 158.0
+offset_top = 245.0
+offset_right = 1596.0
+offset_bottom = 460.0
+texture = ExtResource("8_2vhse")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer"]
+offset_left = 202.0
+offset_top = 258.0
+offset_right = 1602.0
+offset_bottom = 477.0
+texture = ExtResource("9_em06g")
+
 [node name="Heart" parent="CanvasLayer" instance=ExtResource("7_cq0up")]
 position = Vector2(403, 6)
 scale = Vector2(1.17, 1.17)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+visible = false
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
@@ -75,6 +96,11 @@ theme = SubResource("Theme_6bpmt")
 theme_override_font_sizes/normal_font_size = 201
 text = "Inside of you,"
 fit_content = true
+
+[node name="IoY" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_85e0a")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(225, 0)
@@ -91,7 +117,7 @@ theme_override_constants/margin_left = 7
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme = ExtResource("3_fjoxk")
+theme = ExtResource("10_k1jol")
 theme_override_constants/separation = 12
 
 [node name="StartButton" type="Button" parent="MarginContainer/VBoxContainer"]

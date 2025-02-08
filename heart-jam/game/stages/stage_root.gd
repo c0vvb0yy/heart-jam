@@ -96,7 +96,7 @@ func glitch_room_one(loops):
 	if $Background.get_child(0) is Act1Vis:
 		$Background.get_child(0).glitch(loops)
 	pass
-func filter_room_one(is_visible):
+func apply_filter_room_one(is_visible):
 	if $Background.get_child(0) is Act1Vis:
 		$Background.get_child(0).apply_filter(is_visible)
 	pass
