@@ -3,6 +3,7 @@ class_name GameStage
 
 @export var theme_1 : Resource
 @export var theme_2 : Resource
+@export var cracks : PackedScene
 @onready var characters := {}
 
 enum TextStyle {
@@ -38,12 +39,15 @@ var callable_upon_blocker_clear:Callable
 @onready var overlay_sun = find_child("Sun").get_node("ColorRect")
 @onready var overlay_fade_out = find_child("FadeOut").get_node("ColorRect")
 @onready var overlay_orgasm = find_child("Orgasm").get_node("ColorRect")
+@onready var overlay_cracks = find_child("Cracks")
+@onready var overlay_color = find_child("ColorBlock").get_node("ColorRect")
 
 
 @onready var sun_mat = overlay_sun.get_material()
 @onready var orgasm_mat = overlay_orgasm.get_material()
 @onready var fade_mat = overlay_fade_out.get_material()
 @onready var static_mat = overlay_static.get_material()
+@onready var color_mat = overlay_color.get_material()
 
 var target_lod := 0.0
 var target_mix := 0.0
@@ -117,8 +121,6 @@ func _process(_delta: float) -> void:
 	static_mat.set_shader_parameter("intensity", lerp(static_mat.get_shader_parameter("intensity"), target_static, 0.02))
 	static_mat.set_shader_parameter("border_size", lerp(static_mat.get_shader_parameter("border_size"), 1 - target_static, 0.02))
 	
-	orgasm_mat.set_shader_parameter("lod", lerp(orgasm_mat.get_shader_parameter("lod"), 0.0, 0.000175))
-
 	
 	find_child("VFXLayer").position = -camera.offset * camera.zoom.x
 
@@ -491,4 +493,23 @@ func _on_instruction_handler_change_theme(index: int):
 		self.theme = theme_1
 	else:
 		self.theme = theme_2
+	pass # Replace with function body.
+
+
+func _on_instruction_handler_crack_room_one(crack_size: float, crack_count: int):
+	var crack = cracks.instantiate()
+	crack.target_crack_size = crack_size
+	crack.target_crack_count = crack_count
+	overlay_cracks.add_child(crack)
+	pass # Replace with function body.
+
+
+func _on_instruction_handler_clean_cracks():
+	for child in overlay_cracks.get_children():
+		child.queue_free()
+	pass # Replace with function body.
+
+
+func _on_instruction_handler_red(active:bool):
+	overlay_color.visible = active
 	pass # Replace with function body.

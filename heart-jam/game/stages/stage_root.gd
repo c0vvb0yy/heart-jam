@@ -92,10 +92,11 @@ func load_gamestate():
 	#Options.load_gamestate()
 	#Parser.paused = false
 
-func glitch_room_one(loops):
-	if $Background.get_child(0) is Act1Vis:
-		$Background.get_child(0).glitch(loops)
-	pass
+#func glitch_room_one(loops):
+	#if $Background.get_child(0) is Act1Vis:
+	#	$Background.get_child(0).glitch(loops)
+	#pass
+
 func apply_filter_room_one(is_visible):
 	if $Background.get_child(0) is Act1Vis:
 		$Background.get_child(0).apply_filter(is_visible)

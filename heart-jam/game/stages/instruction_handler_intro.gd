@@ -62,6 +62,9 @@ func black_fade(fade_in:float, hold_time:float, fade_out:float, hide_characters:
 	hide_characters,
 	bg,
 	bgm,
+	red,
+	green,
+	blue
 	)
 	return wait_for_completion
 
@@ -237,12 +240,20 @@ func cum(voice: String) -> bool:
 	GameWorld.game_stage.cum(voice)
 	return false
 
-func glitch_room_one(loops) -> bool:
-	loops = float(loops)
-	GameWorld.stage_root.glitch_room_one(loops)
+signal crack_room_one
+func glitch_room_one(size: float, count: int) -> bool:
+	size = float(size)
+	count = int(count)
+	#GameWorld.stage_root.glitch_room_one(loops)
+	emit_signal("crack_room_one", size, count)
 	# Return true if you want the LineReader to wait until its InstructionHandler has emitted instruction_completed.
 	# (Needs to be called by your code from somewhere.)
 	# (The most direct approach is Parser.line_reader.instruction_handler.instruction_completed.emit().)
+	return false
+
+signal clean_cracks
+func remove_cracks() -> bool:
+	emit_signal("clean_cracks")
 	return false
 
 func apply_filter_room_one(visible) -> bool:
@@ -278,4 +289,10 @@ func use_theme(index) -> bool:
 	# (Needs to be called by your code from somewhere.)
 	# (The most direct approach is Parser.line_reader.instruction_handler.instruction_completed.emit().)
 	emit_signal("change_theme", index)
+	return false
+
+signal red
+func red_miles(active:bool) ->bool:
+	active = bool(active)
+	emit_signal("red", active)
 	return false

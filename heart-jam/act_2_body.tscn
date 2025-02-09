@@ -100,6 +100,7 @@ shader_parameter/fractal = ExtResource("28_kiu66")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5af02"]
 
 [node name="Aenthroppe" type="Node2D"]
+position = Vector2(0, -5)
 rotation = -3.21119e-05
 
 [node name="Shine" type="Sprite2D" parent="."]
@@ -109,7 +110,7 @@ texture = ExtResource("25_kurr1")
 
 [node name="Halo" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_vg0dy")
-position = Vector2(-107.99, -309.003)
+position = Vector2(-121.99, -318.004)
 rotation = -0.00433274
 scale = Vector2(7.69336, 7.08008)
 texture = ExtResource("23_mvd1v")

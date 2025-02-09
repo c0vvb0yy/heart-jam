@@ -17,7 +17,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lg6m0"]
 shader = ExtResource("3_13j5x")
 shader_parameter/speed_scale = 0.002
-shader_parameter/hue = Color(0.421058, 0.93193, 1, 1)
+shader_parameter/hue = Color(0.572343, 0.904566, 1, 1)
 shader_parameter/gradient = ExtResource("4_6mivi")
 
 [sub_resource type="Theme" id="Theme_6bpmt"]
@@ -42,9 +42,15 @@ material = SubResource("ShaderMaterial_lg6m0")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -267.0
+offset_top = -385.0
+offset_right = 325.0
+offset_bottom = 304.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_t5ch7")
+expand_mode = 1
+stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 visible = false

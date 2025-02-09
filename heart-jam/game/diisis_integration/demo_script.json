@@ -36,6 +36,8 @@
 		},
 		"empty_strings_for_l10n": false,
 		"facts": {
+			"accept_fate": false,
+			"cease": false,
 			"liked amber": false
 		},
 		"file_config": {
@@ -122,10 +124,12 @@
 			},
 			"glitch_room_one": {
 				"arg_types": [
+					"float",
 					"float"
 				],
 				"args": [
-					"loops"
+					"size",
+					"count"
 				]
 			},
 			"hide_all_characters": {
@@ -171,6 +175,18 @@
 				"args": [
 					"name"
 				]
+			},
+			"red_miles": {
+				"arg_types": [
+					"bool"
+				],
+				"args": [
+					"active"
+				]
+			},
+			"remove_cracks": {
+				"arg_types": [],
+				"args": []
 			},
 			"roll_credits": {
 				"arg_types": [],
@@ -567,7 +583,7 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": false,
+						"meta.is_head_editable": true,
 						"meta.line_index": 1,
 						"meta.selector": {
 							"selected": false
@@ -615,7 +631,7 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": false,
+						"meta.is_head_editable": true,
 						"meta.line_index": 2,
 						"meta.selector": {
 							"selected": false
@@ -706,7 +722,7 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": false,
+						"meta.is_head_editable": true,
 						"meta.line_index": 4,
 						"meta.selector": {
 							"selected": false
@@ -736,7 +752,7 @@
 								"???"
 							],
 							"active_actors_title": "speaker",
-							"content": "[]>iri: Ah, <ap>there it is. <advance><lc>There you are,<ap> Æther.\n[]>iri: How nice it is to look at you.<ap>\nI can only imagine how nice it must be, to be you. <ap>Accomplished, <ap> tolerated, <ap> beloved.\n[]>iri: Every day you go to work. Make money.<ap> Socialize with your coworkers. \n[]>iri: You feel good.\n[]>iri: And every night you spend with your friends. These people love you <ap>and you love them.<ap> [b]Unconditionally.[/b]\n[]>iri: And in between you even find the time to keep your room in shape! <ap>💖\n[]>iri: You got everything you ever needed. <ap>You're save. <ap>You're settled.\n[]>iri: The way you fit in,<ap> it makes me happy.<ap> Everything has been leading up to this.<ap> To you, here. <ap> [i]Gods[/i] have been killed because there has been more faith in [b][i]you.[/i][/b]\n[]>iri: Aren't you glad to be in this role? To be revered?"
+							"content": "[]>iri: Ah, <ap>there it is. <advance><lc>There you are,<ap> Æther.\n[]>iri: How nice it is to look at you.<ap>\nI can only imagine how nice it must be, to be you. <ap>Accomplished, <ap> tolerated, <ap> beloved.\n[]>iri: Every day you go to work. Make money.<ap> Socialize with your coworkers. \n[]>iri: You feel good.\n[]>iri: And every night you spend with your friends. These people love you <ap>and you love them.<ap> [b]Unconditionally.[/b]\n[]>iri: And in between you even find the time to keep your room in shape! <ap>💖\n[]>iri: You got everything you ever needed. <ap>You're save. <ap>You're settled.\n[]>iri: The way you fit in,<ap> it makes me happy to witness.<ap> Everything has been leading up to this.<ap> To you, here. <ap> [i]Gods[/i] have been killed because there has been more faith in [b][i]you.[/i][/b]\n[]>iri: Aren't you glad to be in this role? To be revered?"
 						},
 						"facts": {
 							"fact_data_by_name": {
@@ -749,7 +765,7 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": false,
+						"meta.is_head_editable": true,
 						"meta.line_index": 5,
 						"meta.selector": {
 							"selected": false
@@ -867,7 +883,7 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": false,
+						"meta.is_head_editable": true,
 						"meta.line_index": 6,
 						"meta.selector": {
 							"selected": false
@@ -936,12 +952,13 @@
 							"delay_after": 0,
 							"delay_before": 0,
 							"line_reader.args": [
-								0.03
+								0.03,
+								3
 							],
 							"line_reader.reverse_args": [],
 							"meta.has_reverse": false,
 							"meta.reverse_text": "",
-							"meta.text": "glitch_room_one(0.03)",
+							"meta.text": "glitch_room_one(0.03, 3)",
 							"meta.validation_status": "OK",
 							"name": "glitch_room_one",
 							"reverse_name": ""
@@ -1025,15 +1042,13 @@
 						"content": {
 							"delay_after": 0,
 							"delay_before": 0,
-							"line_reader.args": [
-								0
-							],
+							"line_reader.args": [],
 							"line_reader.reverse_args": [],
 							"meta.has_reverse": false,
 							"meta.reverse_text": "",
-							"meta.text": "glitch_room_one(0.0)",
+							"meta.text": "remove_cracks()",
 							"meta.validation_status": "OK",
-							"name": "glitch_room_one",
+							"name": "remove_cracks",
 							"reverse_name": ""
 						},
 						"facts": {
@@ -1047,7 +1062,7 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": true,
+						"meta.is_head_editable": false,
 						"meta.line_index": 10,
 						"meta.selector": {
 							"selected": false
@@ -1234,14 +1249,15 @@
 							"delay_after": 0,
 							"delay_before": 0,
 							"line_reader.args": [
-								true
+								0.1,
+								15
 							],
 							"line_reader.reverse_args": [],
 							"meta.has_reverse": false,
 							"meta.reverse_text": "",
-							"meta.text": "apply_filter_room_one(true)",
+							"meta.text": "glitch_room_one(0.1,  15)",
 							"meta.validation_status": "OK",
-							"name": "apply_filter_room_one",
+							"name": "glitch_room_one",
 							"reverse_name": ""
 						},
 						"facts": {
@@ -1250,7 +1266,16 @@
 							},
 							"meta.visible": false
 						},
-						"header": [],
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
 						"line_type": 2,
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
@@ -1285,7 +1310,7 @@
 								"???"
 							],
 							"active_actors_title": "speaker",
-							"content": "[]>iri: [jiggle h=2 v=0]What[/jiggle] <ap>are you speaking? <ap>This isn't you. <ap>Stop this."
+							"content": "[]>iri: [jiggle h=2 v=0]What[/jiggle] <ap>are you speaking? <ap>This isn't you. <ap>Stop this.\n[]>aether: ... <ap>"
 						},
 						"facts": {
 							"fact_data_by_name": {
@@ -1306,6 +1331,405 @@
 					},
 					{
 						"address": "0.15",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"auto_switch": false,
+							"choice_title": "",
+							"choices": [
+								{
+									"address": "0.15.0",
+									"behavior_after_first_selection": 0,
+									"choice_text.disabled": "",
+									"choice_text.enabled": "Cease.",
+									"choice_text.enabled_as_default": true,
+									"conditionals": {
+										"behavior": 0,
+										"behavior_key": "Show",
+										"facts": {
+											"fact_data_by_name": {
+
+											},
+											"meta.visible": false
+										},
+										"meta.visible": false,
+										"operand": 0,
+										"operand_args": [],
+										"operand_key": "AND"
+									},
+									"do_jump_page": false,
+									"facts": {
+										"fact_data_by_name": {
+
+										},
+										"meta.visible": true
+									},
+									"jump_address_mode": 0,
+									"loop_address_mode": 0,
+									"loopback": false,
+									"loopback_target_line": 0,
+									"loopback_target_page": 0,
+									"meta.jump_page_before_auto_switch": false,
+									"meta.selector": {
+										"selected": false
+									},
+									"target_line": 0,
+									"target_page": 0
+								},
+								{
+									"address": "0.15.1",
+									"behavior_after_first_selection": 0,
+									"choice_text.disabled": "",
+									"choice_text.enabled": "Accept your fate.",
+									"choice_text.enabled_as_default": true,
+									"conditionals": {
+										"behavior": 0,
+										"behavior_key": "Show",
+										"facts": {
+											"fact_data_by_name": {
+
+											},
+											"meta.visible": false
+										},
+										"meta.visible": false,
+										"operand": 0,
+										"operand_args": [],
+										"operand_key": "AND"
+									},
+									"do_jump_page": false,
+									"facts": {
+										"fact_data_by_name": {
+
+										},
+										"meta.visible": true
+									},
+									"jump_address_mode": 0,
+									"loop_address_mode": 0,
+									"loopback": false,
+									"loopback_target_line": 0,
+									"loopback_target_page": 0,
+									"meta.jump_page_before_auto_switch": false,
+									"meta.selector": {
+										"selected": false
+									},
+									"target_line": 0,
+									"target_page": 0
+								}
+							],
+							"meta.do_jump_page": true
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 1,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 15,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.16",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "remove_cracks()",
+							"meta.validation_status": "OK",
+							"name": "remove_cracks",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 16,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.17",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>iri: ...<ap>Good.<ap> [i]Thank you[/i]<ap> for coming to your senses, Æther.\n[]>iri: Now, where were we-- <ap> <advance>"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 17,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.18",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0.25,
+							"delay_before": 0,
+							"line_reader.args": [
+								0.03,
+								15
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "glitch_room_one(0.03,  15)",
+							"meta.validation_status": "OK",
+							"name": "glitch_room_one",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 18,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.19",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"active_actors": [
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
+							],
+							"active_actors_title": "speaker",
+							"content": "[]>iri: What is happening?! <call:glitch_room_one,0.1,7>[b][i]ÆTHER.[/i][/b]"
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 0,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 19,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.20",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0.08,
+							"delay_before": 0,
+							"line_reader.args": [
+								0.07,
+								10
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "glitch_room_one(0.07,  10)",
+							"meta.validation_status": "OK",
+							"name": "glitch_room_one",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 20,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.21",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -1346,13 +1770,13 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": true,
-						"meta.line_index": 15,
+						"meta.line_index": 21,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "0.16",
+						"address": "0.22",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -1393,13 +1817,13 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": true,
-						"meta.line_index": 16,
+						"meta.line_index": 22,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "0.17",
+						"address": "0.23",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -1422,7 +1846,7 @@
 								"???"
 							],
 							"active_actors_title": "speaker",
-							"content": "[]>???: [jiggle h=5 v=3]No. You stop. "
+							"content": "[]>???: [jiggle h=5 v=3]Do either of you think- <mp>\nthere's a way out of this?"
 						},
 						"facts": {
 							"fact_data_by_name": {
@@ -1436,13 +1860,60 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": true,
-						"meta.line_index": 17,
+						"meta.line_index": 23,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "0.18",
+						"address": "0.24",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								true
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "apply_filter_room_one(true)",
+							"meta.validation_status": "OK",
+							"name": "apply_filter_room_one",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 24,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.25",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -1483,13 +1954,13 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": true,
-						"meta.line_index": 18,
+						"meta.line_index": 25,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "0.19",
+						"address": "0.26",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -1530,69 +2001,13 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": true,
-						"meta.line_index": 19,
+						"meta.line_index": 26,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "0.20",
-						"conditionals": {
-							"behavior": 0,
-							"behavior_key": "Show",
-							"facts": {
-								"fact_data_by_name": {
-
-								},
-								"meta.visible": false
-							},
-							"meta.visible": false,
-							"operand": 0,
-							"operand_args": [],
-							"operand_key": "AND"
-						},
-						"content": {
-							"delay_after": 0.6,
-							"delay_before": 0,
-							"line_reader.args": [
-								2.1,
-								2,
-								2.5,
-								true,
-								"act2",
-								"default",
-								0,
-								0,
-								0,
-								false
-							],
-							"line_reader.reverse_args": [],
-							"meta.has_reverse": false,
-							"meta.reverse_text": "",
-							"meta.text": "black_fade(2.1, 2.0, 2.5, true, act2, default, 0.0,0.0,0.0, false)",
-							"meta.validation_status": "OK",
-							"name": "black_fade",
-							"reverse_name": ""
-						},
-						"facts": {
-							"fact_data_by_name": {
-
-							},
-							"meta.visible": false
-						},
-						"header": [],
-						"line_type": 2,
-						"meta.conditionals_visible": false,
-						"meta.facts_visible": false,
-						"meta.indent_level": 0,
-						"meta.is_head_editable": true,
-						"meta.line_index": 20,
-						"meta.selector": {
-							"selected": false
-						}
-					},
-					{
-						"address": "0.21",
+						"address": "0.27",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -1615,7 +2030,7 @@
 								"???"
 							],
 							"active_actors_title": "speaker",
-							"content": "[]>???: [jiggle h=10 v=7]I will not cease.[/jiggle] <ap><ap> <advance>"
+							"content": "[]>???: [jiggle h=10 v=7]Do either of you think- <mp>\nyou can stop me?[/jiggle] <ap><ap> <advance>"
 						},
 						"facts": {
 							"fact_data_by_name": {
@@ -1629,13 +2044,179 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": true,
-						"meta.line_index": 21,
+						"meta.line_index": 27,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.28",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								2.1,
+								1.5,
+								0.5,
+								true,
+								"act2",
+								"default",
+								255,
+								0,
+								0,
+								false
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "black_fade(2.1, 1.5, 0.5, true, act2, default, 255.0,0.0,0.0, false)",
+							"meta.validation_status": "OK",
+							"name": "black_fade",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 28,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.29",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 3,
+							"line_reader.args": [
+								true
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "red_miles(true)",
+							"meta.validation_status": "OK",
+							"name": "red_miles",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 29,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "0.30",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "remove_cracks()",
+							"meta.validation_status": "OK",
+							"name": "remove_cracks",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": true,
+						"meta.line_index": 30,
 						"meta.selector": {
 							"selected": false
 						}
 					}
 				],
-				"meta.scroll_vertical": 4418,
+				"meta.scroll_vertical": 6642,
 				"meta.selected": false,
 				"next": 1,
 				"number": 0,
@@ -1726,6 +2307,62 @@
 							"delay_after": 0,
 							"delay_before": 0,
 							"line_reader.args": [
+								1
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "use_ui(1)",
+							"meta.validation_status": "OK",
+							"name": "use_ui",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 1,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.2",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
 								"Aenthroppe",
 								0.1
 							],
@@ -1757,63 +2394,7 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": true,
-						"meta.line_index": 1,
-						"meta.selector": {
-							"selected": false
-						}
-					},
-					{
-						"address": "1.2",
-						"conditionals": {
-							"behavior": 0,
-							"behavior_key": "Show",
-							"facts": {
-								"fact_data_by_name": {
-
-								},
-								"meta.visible": false
-							},
-							"meta.visible": false,
-							"operand": 0,
-							"operand_args": [],
-							"operand_key": "AND"
-						},
-						"content": {
-							"delay_after": 0,
-							"delay_before": 0,
-							"line_reader.args": [
-								1
-							],
-							"line_reader.reverse_args": [],
-							"meta.has_reverse": false,
-							"meta.reverse_text": "",
-							"meta.text": "use_ui(1)",
-							"meta.validation_status": "OK",
-							"name": "use_ui",
-							"reverse_name": ""
-						},
-						"facts": {
-							"fact_data_by_name": {
-
-							},
-							"meta.visible": false
-						},
-						"header": [
-							{
-								"data_type": 0,
-								"property_name": "property0",
-								"values": [
-									"value1",
-									null
-								]
-							}
-						],
-						"line_type": 2,
-						"meta.conditionals_visible": false,
-						"meta.facts_visible": false,
-						"meta.indent_level": 0,
-						"meta.is_head_editable": true,
+						"meta.is_head_editable": false,
 						"meta.line_index": 2,
 						"meta.selector": {
 							"selected": false
@@ -1836,6 +2417,127 @@
 							"operand_key": "AND"
 						},
 						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								false
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "red_miles(false)",
+							"meta.validation_status": "OK",
+							"name": "red_miles",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 3,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.4",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
+							"delay_after": 0,
+							"delay_before": 0,
+							"line_reader.args": [
+								0.1,
+								0.1,
+								2.5,
+								false,
+								"act2",
+								"default",
+								255,
+								0,
+								0,
+								true
+							],
+							"line_reader.reverse_args": [],
+							"meta.has_reverse": false,
+							"meta.reverse_text": "",
+							"meta.text": "black_fade(0.1, 0.1, 2.5, false, act2, default, 255.0,0.0,0.0, true)",
+							"meta.validation_status": "OK",
+							"name": "black_fade",
+							"reverse_name": ""
+						},
+						"facts": {
+							"fact_data_by_name": {
+
+							},
+							"meta.visible": false
+						},
+						"header": [
+							{
+								"data_type": 0,
+								"property_name": "property0",
+								"values": [
+									"value1",
+									null
+								]
+							}
+						],
+						"line_type": 2,
+						"meta.conditionals_visible": false,
+						"meta.facts_visible": false,
+						"meta.indent_level": 0,
+						"meta.is_head_editable": false,
+						"meta.line_index": 4,
+						"meta.selector": {
+							"selected": false
+						}
+					},
+					{
+						"address": "1.5",
+						"conditionals": {
+							"behavior": 0,
+							"behavior_key": "Show",
+							"facts": {
+								"fact_data_by_name": {
+
+								},
+								"meta.visible": false
+							},
+							"meta.visible": false,
+							"operand": 0,
+							"operand_args": [],
+							"operand_key": "AND"
+						},
+						"content": {
 							"active_actors": [
 								"iri",
 								"aether",
@@ -1843,7 +2545,7 @@
 								"???"
 							],
 							"active_actors_title": "speaker",
-							"content": "[]>aenthroppe: <ap>\n[]>aenthroppe: lol"
+							"content": "[]>aenthroppe: :o<ap>\n[]>aenthroppe: lol"
 						},
 						"facts": {
 							"fact_data_by_name": {
@@ -1866,13 +2568,13 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": false,
-						"meta.line_index": 3,
+						"meta.line_index": 5,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "1.4",
+						"address": "1.6",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -1917,14 +2619,14 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": true,
-						"meta.line_index": 4,
+						"meta.is_head_editable": false,
+						"meta.line_index": 6,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "1.5",
+						"address": "1.7",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -1974,13 +2676,13 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": false,
-						"meta.line_index": 5,
+						"meta.line_index": 7,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "1.6",
+						"address": "1.8",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2026,13 +2728,13 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": false,
-						"meta.line_index": 6,
+						"meta.line_index": 8,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "1.7",
+						"address": "1.9",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2078,13 +2780,13 @@
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
 						"meta.is_head_editable": false,
-						"meta.line_index": 7,
+						"meta.line_index": 9,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "1.8",
+						"address": "1.10",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2135,14 +2837,14 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": false,
-						"meta.line_index": 8,
+						"meta.is_head_editable": true,
+						"meta.line_index": 10,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "1.9",
+						"address": "1.11",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2187,14 +2889,14 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": false,
-						"meta.line_index": 9,
+						"meta.is_head_editable": true,
+						"meta.line_index": 11,
 						"meta.selector": {
 							"selected": false
 						}
 					},
 					{
-						"address": "1.10",
+						"address": "1.12",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2239,8 +2941,8 @@
 						"meta.conditionals_visible": false,
 						"meta.facts_visible": false,
 						"meta.indent_level": 0,
-						"meta.is_head_editable": false,
-						"meta.line_index": 10,
+						"meta.is_head_editable": true,
+						"meta.line_index": 12,
 						"meta.selector": {
 							"selected": false
 						}
@@ -2262,7 +2964,7 @@
 				},
 				"lines": [
 					{
-						"address": "2.0",
+						"address": "3.0",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2279,10 +2981,12 @@
 						},
 						"content": {
 							"active_actors": [
-								"narrator",
-								"amber"
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
 							],
-							"active_actors_title": "character",
+							"active_actors_title": "speaker",
 							"content": "[]>iri:With that, we can start to wrap up.\n[]>amber:Change of scenery please!"
 						},
 						"facts": {
@@ -2312,7 +3016,7 @@
 						}
 					},
 					{
-						"address": "2.1",
+						"address": "3.1",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2369,7 +3073,7 @@
 						}
 					},
 					{
-						"address": "2.2",
+						"address": "3.2",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2386,10 +3090,12 @@
 						},
 						"content": {
 							"active_actors": [
-								"narrator",
-								"amber"
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
 							],
-							"active_actors_title": "character",
+							"active_actors_title": "speaker",
 							"content": "[]>iri:There you go <3\n[]>iri:Dear reader; This template comes with all the simple things you need to make your own visual novel. There's a guide for the setup [url=https://github.com/SnekOfSpice/dialog-editor/wiki/Using-the-visual-novel-template]here[/url]. I would recommend you still know the very basics of Godot, maybe look into how to use themes."
 						},
 						"facts": {
@@ -2419,7 +3125,7 @@
 						}
 					},
 					{
-						"address": "2.3",
+						"address": "3.3",
 						"conditionals": {
 							"behavior": 0,
 							"behavior_key": "Show",
@@ -2436,10 +3142,12 @@
 						},
 						"content": {
 							"active_actors": [
-								"narrator",
-								"amber"
+								"iri",
+								"aether",
+								"aenthroppe",
+								"???"
 							],
-							"active_actors_title": "character",
+							"active_actors_title": "speaker",
 							"content": "[]>iri:How can you leave this place again? Well you can just terminate the page by not having it point to a page again. <mp>[rainbow freq=1.0 sat=0.8 val=0.8]Go out there and create![/rainbow]\n[]>iri:This demo and DIISIS entirely was made by [url=https://snekofspice.itch.io/]Snek[/url].\n[]>iri:Music by [url=https://chezmonplaisir.bandcamp.com/album/chill-for-real]Loyalty Freak Music[/url].\n[]>iri:Amber art by [url=https://x.com/_10qi]10qi[/url]."
 						},
 						"facts": {

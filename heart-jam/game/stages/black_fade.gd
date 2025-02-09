@@ -12,7 +12,8 @@ func _ready() -> void:
 	modulate.a = 0.0
 	visible = true
 
-func fade_in(duration: float):
+func fade_in(duration: float, red: float, green: float, blue: float):
+	color = Color(red, green, blue)
 	if duration == 0.0:
 		modulate.a = 1.0
 		on_full_black_reached()
@@ -58,7 +59,7 @@ func on_clear_reached():
 	GameWorld.instruction_handler.instruction_completed.emit()
 
 
-func _on_handler_start_black_fade(fade_in_duration, hold_time, fade_out_duration, hide_characters, new_background, new_bgm):
+func _on_handler_start_black_fade(fade_in_duration, hold_time, fade_out_duration, hide_characters, new_background, new_bgm, red, green, blue):
 	if GameWorld.skip:
 		fade_out_duration = 0.1
 		hold_time = 0.1
@@ -68,4 +69,4 @@ func _on_handler_start_black_fade(fade_in_duration, hold_time, fade_out_duration
 	release_on_full_black_reached = fade_out_duration
 	sustain_on_full_black_reached = hold_time
 	new_bgm_on_full_black_reached = new_bgm
-	fade_in(fade_in_duration)
+	fade_in(fade_in_duration, red, green, blue)

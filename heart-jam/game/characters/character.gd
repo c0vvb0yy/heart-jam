@@ -86,8 +86,7 @@ func on_instruction_end_reached():
 func _on_instruction_handler_fade_character(character_name, fade_duration):
 	if character_name != self.name:
 		return
-	if !visible:
-		visible = true
+	visible = true
 	if modulate.a >= 0.1:
 		modulate.a = 0
 	fade_in(fade_duration)

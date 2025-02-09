@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bgx7pdorocdvv"]
+[gd_scene load_steps=12 format=3 uid="uid://bgx7pdorocdvv"]
 
 [ext_resource type="Texture2D" uid="uid://ccjydfx1cxxbu" path="res://debug_sprites/anteroom.png" id="1_hbp0g"]
 [ext_resource type="Script" path="res://atc_1_vis.gd" id="1_x0csd"]
@@ -8,11 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://nyy6lolqo1ji" path="res://textures/act1/near_ceiling.png" id="6_nghct"]
 [ext_resource type="Texture2D" uid="uid://b8jq0kr4k0ecl" path="res://textures/act1/far_wall.png" id="7_cf5x1"]
 [ext_resource type="Texture2D" uid="uid://xfbo5a62pjx5" path="res://textures/act1/far_ceiling.png" id="8_xnja7"]
-[ext_resource type="Shader" path="res://shaders/LightningBolts.gdshader" id="9_1r2ho"]
 [ext_resource type="Shader" path="res://shaders/wall.gdshader" id="9_fjmlj"]
-[ext_resource type="Texture2D" uid="uid://xxvbr06uadiu" path="res://sprites/act2/head.png" id="10_liqe6"]
 [ext_resource type="Texture2D" uid="uid://bt6irc1weqow6" path="res://debug_sprites/noise_overlay.png" id="10_m80n2"]
-[ext_resource type="Texture2D" uid="uid://cjbveug7lvc8w" path="res://debug_sprites/grayscale_4.png" id="10_v4kmi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kh74n"]
 resource_local_to_scene = true
@@ -23,37 +20,6 @@ shader_parameter/sway_speed = 0.29
 shader_parameter/sway_strength = -0.095
 shader_parameter/sway_phase_len = 7.41
 shader_parameter/overlay_input = ExtResource("10_m80n2")
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qjg1s"]
-noise_type = 2
-frequency = 0.0119
-fractal_type = 3
-fractal_lacunarity = 3.195
-fractal_weighted_strength = 0.56
-fractal_ping_pong_strength = 2.95
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_uc3w7"]
-width = 32
-height = 32
-seamless = true
-seamless_blend_skirt = 0.402
-noise = SubResource("FastNoiseLite_qjg1s")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0g37g"]
-shader = ExtResource("9_1r2ho")
-shader_parameter/lightning_color = Color(1, 0, 0, 1)
-shader_parameter/size = 0.0
-shader_parameter/width = 0.429
-shader_parameter/speed = 1.355
-shader_parameter/cycle = 0.545
-shader_parameter/ratio = 0.025
-shader_parameter/time_shift = 1.525
-shader_parameter/strike_count = 3
-shader_parameter/strike_delay = 0.8
-shader_parameter/glow_intensity = 1.0
-shader_parameter/shift_speed = 1.1
-shader_parameter/gradient = ExtResource("10_v4kmi")
-shader_parameter/noise = SubResource("NoiseTexture2D_uc3w7")
 
 [node name="Visuals" type="Node2D"]
 script = ExtResource("1_x0csd")
@@ -194,17 +160,3 @@ material = SubResource("ShaderMaterial_kh74n")
 position = Vector2(401, 0.963597)
 scale = Vector2(-1, 1.038)
 texture = ExtResource("8_xnja7")
-
-[node name="Cracks" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_0g37g")
-position = Vector2(785, 498)
-rotation = 1.04428
-scale = Vector2(6.22697, 6.60752)
-texture = ExtResource("10_liqe6")
-
-[node name="Cracks2" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_0g37g")
-position = Vector2(785, 498)
-rotation = -0.426648
-scale = Vector2(6.22697, 6.60752)
-texture = ExtResource("10_liqe6")

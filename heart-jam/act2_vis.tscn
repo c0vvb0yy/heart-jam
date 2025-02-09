@@ -217,15 +217,14 @@ shader_parameter/star_color = Color(0.484854, 0.805182, 0.918457, 1)
 shader_parameter/starmap = ExtResource("35_g7xk3")
 
 [node name="act2" type="Node2D"]
+position = Vector2(800, 600)
 rotation = -3.21119e-05
 
 [node name="room" type="Node2D" parent="."]
-position = Vector2(830, 661)
 scale = Vector2(1.06, 1.06)
 
 [node name="BaseLeft" type="Sprite2D" parent="room"]
 modulate = Color(0.742624, 0, 0.273039, 1)
-position = Vector2(-28.3019, -57.5472)
 scale = Vector2(0.943396, 0.943396)
 texture = ExtResource("1_rdogv")
 
@@ -236,7 +235,6 @@ texture = ExtResource("4_j3xsl")
 
 [node name="BaseRight" type="Sprite2D" parent="room"]
 modulate = Color(0.742624, 0, 0.273039, 1)
-position = Vector2(-28.3019, -57.5472)
 scale = Vector2(0.943396, 0.943396)
 texture = ExtResource("5_qjo3j")
 
@@ -247,7 +245,6 @@ texture = ExtResource("6_qydsw")
 
 [node name="BaseBot" type="Sprite2D" parent="room"]
 modulate = Color(0.742624, 0, 0.273039, 1)
-position = Vector2(-28.3019, -57.5472)
 scale = Vector2(0.943396, 0.943396)
 texture = ExtResource("7_cbutg")
 
@@ -258,7 +255,6 @@ texture = ExtResource("8_t8uhn")
 
 [node name="BaseTop" type="Sprite2D" parent="room"]
 modulate = Color(0.742624, 0, 0.273039, 1)
-position = Vector2(-28.3019, -57.5472)
 scale = Vector2(0.943396, 0.943396)
 texture = ExtResource("9_c888r")
 
@@ -282,7 +278,7 @@ region_rect = Rect2(55.6664, 7.33369, 150, 241.333)
 
 [node name="Ribs" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_kne3m")
-position = Vector2(834, 676)
+position = Vector2(0.997721, 71)
 texture = ExtResource("18_kshdo")
 
 [node name="CageBed" type="Sprite2D" parent="Ribs"]
