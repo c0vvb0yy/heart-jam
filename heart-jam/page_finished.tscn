@@ -1,19 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://df8dpjd818vfd"]
+[gd_scene load_steps=4 format=3 uid="uid://df8dpjd818vfd"]
 
 [ext_resource type="Texture2D" uid="uid://cae8aid4bghsl" path="res://page_finished.png" id="1_i762x"]
+[ext_resource type="Material" uid="uid://dyxngiqd4lkc3" path="res://page_finished_mat.tres" id="1_y43gr"]
 [ext_resource type="Script" path="res://game/stages/page_finished.gd" id="2_vwq31"]
 
 [node name="PageFinished" type="TextureRect"]
 texture_filter = 1
+material = ExtResource("1_y43gr")
 custom_minimum_size = Vector2(2.725, 0)
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -509.93
+offset_left = -519.787
 offset_top = -74.0
-offset_right = -477.93
+offset_right = -487.787
 offset_bottom = -42.0
 grow_horizontal = 0
 grow_vertical = 0

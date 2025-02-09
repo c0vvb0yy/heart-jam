@@ -449,6 +449,12 @@ func use_ui(id:int):
 		if c.name.begins_with("TextContainer"):
 			c.visible = c == ui_root
 	
+	var intensity := 0.3
+	if(vn_ui_root.theme == theme_2):
+		intensity = 1.0
+	vn_ui_root.find_child(str("PageFinished",ui_id)).get_material().set_shader_parameter("rainbow_intensity", intensity)
+	vn_ui_root.find_child(str("PageUnfinished",ui_id)).get_material().set_shader_parameter("rainbow_intensity", intensity)
+	
 	lr.text_content = ui_root.find_child("RichTextLabel")
 	lr.text_container = ui_root
 	lr.name_label = ui_root.find_child("Label")
@@ -490,9 +496,9 @@ func _on_rich_text_label_meta_hover_started(_meta: Variant) -> void:
 
 func _on_instruction_handler_change_theme(index: int):
 	if(index == 1):
-		self.theme = theme_1
+		vn_ui_root.theme = theme_1
 	else:
-		self.theme = theme_2
+		vn_ui_root.theme = theme_2
 	pass # Replace with function body.
 
 

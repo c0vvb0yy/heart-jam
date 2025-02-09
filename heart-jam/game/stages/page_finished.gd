@@ -1,4 +1,3 @@
-@tool
 extends TextureRect
 
 @export var bop_length := 10

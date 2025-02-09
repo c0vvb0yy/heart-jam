@@ -2,11 +2,15 @@
 
 [resource]
 bg_color = Color(0, 0, 0, 0.654902)
-skew = Vector2(0.04, 0)
+skew = Vector2(0.05, 0)
 border_width_left = 1
 border_width_top = 1
 border_color = Color(0.880341, 0.66084, 0.905618, 0.45098)
 border_blend = true
 corner_radius_top_left = 1
+expand_margin_left = 7.0
+expand_margin_top = 3.0
+expand_margin_right = 15.0
+expand_margin_bottom = 12.0
 shadow_offset = Vector2(8.595, 5.35)
 anti_aliasing_size = 10.0

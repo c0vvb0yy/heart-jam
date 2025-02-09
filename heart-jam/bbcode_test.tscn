@@ -29,10 +29,15 @@ theme_override_font_sizes/normal_font_size = 131
 bbcode_enabled = true
 text = "Æ[jiggle h=10 v=2][glitch magnitude=0.8 glitchiness=2.5 speed=0.5]nthroppe[/glitch] [/jiggle]
 
+Æ[replacer prim_repl=n,t,r,o,p,y sec_repl=n,t,r,o,p,y][glitch magnitude=0.3 glitchiness=1.5 speed=1.0]quilas[/glitch][/replacer]
+
 Æ[replacer prim_repl=s,w,a,g,g,y sec_repl=g,a,y][glitch magnitude=0.8 glitchiness=1.5 speed=1.5]nthroppe[/glitch][/replacer]
 pr[replacer prim_repl=a]e[/replacer]y
 
-[cycle word=r,e,s,p,o,n,s,i,b,i,l,i,t,y]responsibility[/cycle]"
+[cycle word=r,e,s,p,o,n,s,i,b,i,l,i,t,y]responsibility[/cycle]
+
+Entropy
+Aquilas"
 scroll_active = false
 custom_effects = [SubResource("RichTextEffect_oi17g"), SubResource("RichTextEffect_xwgop"), SubResource("RichTextEffect_gp22t"), SubResource("RichTextEffect_ywj3q")]
 

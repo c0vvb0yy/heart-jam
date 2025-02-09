@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://r1ntcqdujfol"]
+[gd_scene load_steps=69 format=3 uid="uid://r1ntcqdujfol"]
 
 [ext_resource type="Script" path="res://game/stages/game_stage.gd" id="1_a36me"]
 [ext_resource type="Script" path="res://addons/diisis/parser/src/line_reader.gd" id="1_h4afo"]
@@ -30,8 +30,6 @@
 [ext_resource type="PackedScene" uid="uid://ipa310726xyt" path="res://game/stages/rolling_credits.tscn" id="17_gnute"]
 [ext_resource type="PackedScene" uid="uid://dqebnrtcorgt4" path="res://page_unfinished.tscn" id="25_x4gx6"]
 [ext_resource type="PackedScene" uid="uid://df8dpjd818vfd" path="res://page_finished.tscn" id="26_8bet6"]
-[ext_resource type="Shader" path="res://iridescence_base.gdshader" id="26_l5mly"]
-[ext_resource type="Texture2D" uid="uid://cjmde2hqdd7j8" path="res://debug_sprites/wall_base.png" id="27_j1qrb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ca2q"]
 resource_local_to_scene = true
@@ -139,18 +137,6 @@ bg_color = Color(0.05, 0.05, 0.05, 0.756863)
 shader = ExtResource("17_dc0ef")
 shader_parameter/intensity = 0.0
 shader_parameter/border_size = 1.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_oyajn"]
-shader = ExtResource("26_l5mly")
-shader_parameter/noise_scale = 6.502
-shader_parameter/distortion_scale_x = 0.0
-shader_parameter/distortion_scale_y = 0.0
-shader_parameter/rainbow_intensity = 0.387
-shader_parameter/noise_texture = ExtResource("27_j1qrb")
-
-[sub_resource type="ImageTexture" id="ImageTexture_0dnj5"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_pfq1d"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_uic7a"]
 script = ExtResource("13_7esux")
@@ -369,7 +355,6 @@ custom_effects = [SubResource("RichTextEffect_3olxo"), SubResource("RichTextEffe
 
 [node name="TextContainer2" type="CenterContainer" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI"]
 auto_translate_mode = 1
-visible = false
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 1
 anchors_preset = 4
@@ -456,7 +441,6 @@ custom_effects = [SubResource("RichTextEffect_5x8ii"), SubResource("RichTextEffe
 
 [node name="TextContainer3" type="CenterContainer" parent="Camera2D/CanvasLayer/VNUIRoot/VNUI"]
 auto_translate_mode = 1
-visible = false
 custom_minimum_size = Vector2(340, 0)
 layout_mode = 1
 anchors_preset = 6
@@ -638,21 +622,22 @@ layout_mode = 1
 layout_mode = 1
 
 [node name="PageUnfinished1" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
+visible = false
 layout_mode = 0
 offset_left = 1100.0
 offset_top = 1128.0
 offset_right = 1132.0
 offset_bottom = 1160.0
-rotation = 5.10701
+rotation = 5.08056
 
 [node name="PageUnfinished2" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
 visible = false
 layout_mode = 0
-offset_left = 295.0
-offset_top = 722.0
-offset_right = 327.0
-offset_bottom = 754.0
-rotation = 5.10701
+offset_left = 286.0
+offset_top = 726.0
+offset_right = 318.0
+offset_bottom = 758.0
+rotation = 5.08056
 
 [node name="PageUnfinished3" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("25_x4gx6")]
 visible = false
@@ -661,19 +646,19 @@ offset_left = 1546.0
 offset_top = 712.0
 offset_right = 1578.0
 offset_bottom = 744.0
-rotation = 5.10701
+rotation = 5.08056
 
 [node name="PageFinished1" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
-material = SubResource("ShaderMaterial_oyajn")
+visible = false
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-offset_left = 1105.12
+offset_left = 1100.32
 offset_top = 1127.0
-offset_right = 1137.12
+offset_right = 1132.32
 offset_bottom = 1159.0
 grow_horizontal = 1
 grow_vertical = 1
@@ -682,20 +667,18 @@ bop_length = 5
 [node name="PageFinished2" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
 visible = false
 layout_mode = 1
-offset_left = -1291.76
-offset_top = -478.0
-offset_right = -1259.76
-offset_bottom = -446.0
-texture = SubResource("ImageTexture_0dnj5")
+offset_left = -1314.0
+offset_top = -474.0
+offset_right = -1282.0
+offset_bottom = -442.0
 
 [node name="PageFinished3" parent="Camera2D/CanvasLayer/VNUIRoot" instance=ExtResource("26_8bet6")]
 visible = false
 layout_mode = 1
-offset_left = -35.7574
+offset_left = -54.0
 offset_top = -489.0
-offset_right = -3.75745
+offset_right = -22.0
 offset_bottom = -457.0
-texture = SubResource("ImageTexture_pfq1d")
 
 [node name="StartCover" type="ColorRect" parent="Camera2D/CanvasLayer"]
 visible = false
@@ -773,7 +756,7 @@ auto_pause_duration = 1.2
 property_for_name = "speaker"
 name_map = {
 "???": "???",
-"aenthroppe": "Æ[glitch]nthroppe",
+"aenthroppe": "Æ[replacer prim_repl=n,t,r,o,p,y sec_repl=n,t,r,o,p,y][glitch magnitude=0.3 glitchiness=1.5 speed=1.0]quilas[/glitch][/replacer]",
 "aether": "Æther",
 "amber": "Amber",
 "anthroppe": "Ænthroppe",
